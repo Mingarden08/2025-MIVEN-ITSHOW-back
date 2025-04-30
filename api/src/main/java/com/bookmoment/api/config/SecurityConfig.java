@@ -49,13 +49,13 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "/api/auth/login",
+                                "/api/members/signup",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",             // 혹시 사용하는 경우 대비
                                 "/v3/api-docs/**",
                                 "/swagger-resources/**",
-                                "/webjars/**"
-                                /*"/api/auth/login",
+                                "/webjars/**",
+                                "/api/auth/**"/*,
                                 "/bookmoment-swagger-ui/index.html",
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**"*/).permitAll() // 로그인은 예외 처리

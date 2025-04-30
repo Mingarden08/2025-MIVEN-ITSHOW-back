@@ -30,17 +30,6 @@ public class MemberController {
     @Autowired
     MemberService memberService;
 
-    /**
-     * 회원가입 처리 API
-     * @param requestDto
-     * @return
-    {
-    "name" : "민영후",
-    "email" : "younghu.min@gmail.com",
-    "passwd" : "asdfasdfasdfasdf",
-    "tel" : "01083392852"
-    }
-     */
     @PostMapping("/signup")
     public ResponseEntity<DataResponse<?>> signup(@Valid @RequestBody MemberSignupRequestDto requestDto) {
 
@@ -49,21 +38,6 @@ public class MemberController {
         return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, member));
     }
 
-// 아빠 주석
-//    @GetMapping("/profile/{email}")
-//    public ResponseEntity<MemberProfileRequestDto> profile(@PathVariable String email) {
-//
-//        log.info(">>> profile call");
-//        return memberService.profile(email)
-//                .map(ResponseEntity::ok)
-//                .orElse(ResponseEntity.notFound().build());
-
-    /**
-     * Authentication을 이용한 인증정보 추출 후 회원 정보 조회
-     * @param authentication
-     * @param request
-     * @return
-     */
     @PostMapping("/profile")
     public ResponseEntity<DataResponse<MemberInfoRes>> profile(@Parameter(hidden = true) Authentication authentication,
                                                                HttpServletRequest request) {
