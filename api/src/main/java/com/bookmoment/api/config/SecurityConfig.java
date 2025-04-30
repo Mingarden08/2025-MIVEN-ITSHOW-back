@@ -48,10 +48,17 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable) // ✅ 변경된 방식
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/login",
-                                "/swagger-ui.html",
+                        .requestMatchers(
+                                "/api/auth/login",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",             // 혹시 사용하는 경우 대비
                                 "/v3/api-docs/**",
-                                "/swagger-ui/**").permitAll() // 로그인은 예외 처리
+                                "/swagger-resources/**",
+                                "/webjars/**"
+                                /*"/api/auth/login",
+                                "/bookmoment-swagger-ui/index.html",
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**"*/).permitAll() // 로그인은 예외 처리
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);

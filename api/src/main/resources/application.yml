@@ -6,9 +6,9 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     #jdbc-url: jdbc:mysql://localhost:3306/mad?useUnicode=true&characterEncoding=utf-8
-    jdbc-url: jdbc:mysql://localhost:3306/mad?autoReconnect=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false&passwordCharacterEncoding=UTF8
-    username:
-    password:
+    url: jdbc:mysql://3.38.185.232:3306/bookmoment_db?autoReconnect=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false&passwordCharacterEncoding=UTF8
+    username: miven
+    password: Miven2025!
     minimum-idle: 20
     maximum-pool-size: 5
     connection-timeout: 10000
@@ -50,7 +50,7 @@ logging:
 springdoc:
   swagger-ui:
     enabled: true
-    path: /bookmoment-swagger.html
+    path: /swagger-ui/index.html
   api-docs:
     path: /v3/api-docs
   paths-to-match: /api/**

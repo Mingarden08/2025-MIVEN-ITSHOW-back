@@ -1,0 +1,660 @@
+2025-04-30 10:04:55.512[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:04:55.519[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:04:55.641[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 42312 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:04:55.641[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:04:55.746[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:04:55.748[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:04:57.402[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:04:57.515[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 98 ms. Found 1 JPA repository interface.
+2025-04-30 10:04:58.715[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:04:58.732[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:04:58.742[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:04:58.744[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:04:58.863[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:04:58.863[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 3113 ms
+2025-04-30 10:04:59.001[restartedMain][AnnotationConfigServletWebServerApplicationContext:632][WARN ] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine suitable jdbc url
+2025-04-30 10:04:59.004[restartedMain][StandardService:173][INFO ] - Stopping service [Tomcat]
+2025-04-30 10:04:59.040[restartedMain][ConditionEvaluationReportLogger:82][INFO ] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-30 10:04:59.079[restartedMain][LoggingFailureAnalysisReporter:40][ERROR] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine suitable jdbc url
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2025-04-30 10:08:31.652[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:08:31.651[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:08:31.737[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 52852 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:08:31.740[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:08:31.834[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:08:31.836[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:08:32.997[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:08:33.070[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
+2025-04-30 10:08:34.117[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:08:34.134[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:08:34.138[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:08:34.139[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:08:34.252[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:08:34.253[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 2414 ms
+2025-04-30 10:08:34.393[restartedMain][AnnotationConfigServletWebServerApplicationContext:632][WARN ] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine suitable jdbc url
+2025-04-30 10:08:34.396[restartedMain][StandardService:173][INFO ] - Stopping service [Tomcat]
+2025-04-30 10:08:34.420[restartedMain][ConditionEvaluationReportLogger:82][INFO ] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-30 10:08:34.450[restartedMain][LoggingFailureAnalysisReporter:40][ERROR] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine suitable jdbc url
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2025-04-30 10:09:03.355[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:09:03.355[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:09:03.431[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 16152 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:09:03.433[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:09:03.504[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:09:03.506[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:09:04.695[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:09:04.774[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2025-04-30 10:09:05.682[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:09:05.697[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:09:05.698[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:09:05.700[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:09:05.795[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:09:05.796[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 2289 ms
+2025-04-30 10:09:06.099[restartedMain][LogHelper:31][INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:09:06.199[restartedMain][Version:44][INFO ] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-04-30 10:09:06.264[restartedMain][RegionFactoryInitiator:50][INFO ] - HHH000026: Second-level cache disabled
+2025-04-30 10:09:06.758[restartedMain][SpringPersistenceUnitInfo:87][INFO ] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:09:06.789[restartedMain][deprecation:197][WARN ] - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-04-30 10:09:06.818[restartedMain][deprecation:153][WARN ] - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-30 10:09:06.820[restartedMain][deprecation:101][WARN ] - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-30 10:09:06.848[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@67e09b11) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@31f644a0)
+2025-04-30 10:09:06.850[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@4e469b0f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@9d3027c)
+2025-04-30 10:09:06.850[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6a082844) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6958a2e1)
+2025-04-30 10:09:06.851[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@13bcd226) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2edf2cf)
+2025-04-30 10:09:06.851[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@290ca0de) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5ef40b4)
+2025-04-30 10:09:06.851[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@70379fcd) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1da1608e)
+2025-04-30 10:09:06.851[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@51e729b4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2ef239dc)
+2025-04-30 10:09:06.851[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@62f70238) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@74c4abf8)
+2025-04-30 10:09:06.852[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1c86865d) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@230570c8)
+2025-04-30 10:09:08.313[restartedMain][JtaPlatformInitiator:59][INFO ] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 10:09:08.344[restartedMain][HikariDataSource:109][INFO ] - HikariPool-1 - Starting...
+2025-04-30 10:09:08.690[restartedMain][HikariPool:554][INFO ] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b699197
+2025-04-30 10:09:08.697[restartedMain][HikariDataSource:122][INFO ] - HikariPool-1 - Start completed.
+2025-04-30 10:09:08.801[restartedMain][ExceptionHandlerLoggedImpl:27][WARN ] - GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table TBL_MEMBER_DETAIL 
+       drop 
+       foreign key FKj734x2fkpg83p9dt1icuetk1p" via JDBC [Table 'bookmoment_db.TBL_MEMBER_DETAIL' doesn't exist]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table TBL_MEMBER_DETAIL 
+       drop 
+       foreign key FKj734x2fkpg83p9dt1icuetk1p" via JDBC [Table 'bookmoment_db.TBL_MEMBER_DETAIL' doesn't exist]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233)
+	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:476)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropConstraintsTablesSequences(SchemaDropperImpl.java:242)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:215)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:185)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:155)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:115)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:238)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.bookmoment.api.ApiApplication.main(ApiApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'bookmoment_db.TBL_MEMBER_DETAIL' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:837)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:685)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 44 common frames omitted
+2025-04-30 10:09:09.157[restartedMain][LocalContainerEntityManagerFactoryBean:437][INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:09:09.974[restartedMain][JpaBaseConfiguration$JpaWebConfiguration:236][WARN ] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-30 10:09:10.044[restartedMain][InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:113][INFO ] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-30 10:09:11.008[restartedMain][OptionalLiveReloadServer:59][INFO ] - LiveReload server is running on port 35729
+2025-04-30 10:09:11.034[restartedMain][Http11NioProtocol:173][INFO ] - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:09:11.078[restartedMain][TomcatWebServer:243][INFO ] - Tomcat started on port 8080 (http) with context path '/'
+2025-04-30 10:09:11.092[restartedMain][ApiApplication:56][INFO ] - Started ApiApplication in 8.443 seconds (process running for 9.736)
+2025-04-30 10:09:11.099[restartedMain][ApiApplication:13][INFO ] - 
+
+======================================== ApiApplication started ========================================
+
+
+2025-04-30 10:10:44.143[http-nio-8080-exec-3][[/]:173][INFO ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 10:10:44.143[http-nio-8080-exec-3][DispatcherServlet:532][INFO ] - Initializing Servlet 'dispatcherServlet'
+2025-04-30 10:10:44.147[http-nio-8080-exec-3][DispatcherServlet:554][INFO ] - Completed initialization in 4 ms
+2025-04-30 10:11:25.103[SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean:650][INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:11:25.103[SpringApplicationShutdownHook][HikariDataSource:349][INFO ] - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:11:25.116[SpringApplicationShutdownHook][HikariDataSource:351][INFO ] - HikariPool-1 - Shutdown completed.
+2025-04-30 10:11:30.345[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:11:30.345[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:11:30.424[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 11136 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:11:30.428[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:11:30.516[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:11:30.517[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:11:31.678[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:11:31.753[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
+2025-04-30 10:11:32.664[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:11:32.677[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:11:32.679[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:11:32.680[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:11:32.770[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:11:32.771[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 2251 ms
+2025-04-30 10:11:33.020[restartedMain][LogHelper:31][INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:11:33.109[restartedMain][Version:44][INFO ] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-04-30 10:11:33.155[restartedMain][RegionFactoryInitiator:50][INFO ] - HHH000026: Second-level cache disabled
+2025-04-30 10:11:33.587[restartedMain][SpringPersistenceUnitInfo:87][INFO ] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:11:33.607[restartedMain][deprecation:197][WARN ] - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-04-30 10:11:33.626[restartedMain][deprecation:153][WARN ] - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-30 10:11:33.627[restartedMain][deprecation:101][WARN ] - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-30 10:11:33.651[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5b7c7111) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6f20c70d)
+2025-04-30 10:11:33.652[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@23b5dba2) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@65d7e564)
+2025-04-30 10:11:33.653[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5d9bf436) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@34ea4827)
+2025-04-30 10:11:33.653[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@398fedd3) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6329d343)
+2025-04-30 10:11:33.653[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6191a154) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@75c6631)
+2025-04-30 10:11:33.653[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@41fbe27c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6c6582cb)
+2025-04-30 10:11:33.653[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@920512) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@649b96df)
+2025-04-30 10:11:33.654[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7a6d6032) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@3aded66e)
+2025-04-30 10:11:33.655[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2a74feb2) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1261b84d)
+2025-04-30 10:11:35.041[restartedMain][JtaPlatformInitiator:59][INFO ] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 10:11:35.063[restartedMain][HikariDataSource:109][INFO ] - HikariPool-1 - Starting...
+2025-04-30 10:11:35.427[restartedMain][HikariPool:554][INFO ] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64ce2ee4
+2025-04-30 10:11:35.433[restartedMain][HikariDataSource:122][INFO ] - HikariPool-1 - Start completed.
+2025-04-30 10:11:36.074[restartedMain][LocalContainerEntityManagerFactoryBean:437][INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:11:36.787[restartedMain][JpaBaseConfiguration$JpaWebConfiguration:236][WARN ] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-30 10:11:36.850[restartedMain][InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:113][INFO ] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-30 10:11:37.817[restartedMain][OptionalLiveReloadServer:59][INFO ] - LiveReload server is running on port 35729
+2025-04-30 10:11:37.849[restartedMain][Http11NioProtocol:173][INFO ] - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:11:37.885[restartedMain][TomcatWebServer:243][INFO ] - Tomcat started on port 8080 (http) with context path '/'
+2025-04-30 10:11:37.904[restartedMain][ApiApplication:56][INFO ] - Started ApiApplication in 8.275 seconds (process running for 9.558)
+2025-04-30 10:11:37.910[restartedMain][ApiApplication:13][INFO ] - 
+
+======================================== ApiApplication started ========================================
+
+
+2025-04-30 10:11:55.369[http-nio-8080-exec-1][[/]:173][INFO ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 10:11:55.369[http-nio-8080-exec-1][DispatcherServlet:532][INFO ] - Initializing Servlet 'dispatcherServlet'
+2025-04-30 10:11:55.369[http-nio-8080-exec-1][DispatcherServlet:554][INFO ] - Completed initialization in 0 ms
+2025-04-30 10:13:45.427[SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean:650][INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:13:45.427[SpringApplicationShutdownHook][HikariDataSource:349][INFO ] - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:13:45.446[SpringApplicationShutdownHook][HikariDataSource:351][INFO ] - HikariPool-1 - Shutdown completed.
+2025-04-30 10:14:44.861[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:14:44.891[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:14:44.937[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 17928 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:14:44.942[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:14:45.014[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:14:45.020[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:14:46.260[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:14:46.335[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
+2025-04-30 10:14:47.296[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:14:47.304[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:14:47.304[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:14:47.313[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:14:47.403[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:14:47.411[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 2390 ms
+2025-04-30 10:14:47.646[restartedMain][LogHelper:31][INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:14:47.723[restartedMain][Version:44][INFO ] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-04-30 10:14:47.789[restartedMain][RegionFactoryInitiator:50][INFO ] - HHH000026: Second-level cache disabled
+2025-04-30 10:14:48.214[restartedMain][SpringPersistenceUnitInfo:87][INFO ] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:14:48.239[restartedMain][deprecation:197][WARN ] - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-04-30 10:14:48.264[restartedMain][deprecation:153][WARN ] - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-30 10:14:48.264[restartedMain][deprecation:101][WARN ] - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-30 10:14:48.296[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2a25a99e) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@16d15c5b)
+2025-04-30 10:14:48.296[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@564fd06e) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5bed11be)
+2025-04-30 10:14:48.296[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5c033a04) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@402c865b)
+2025-04-30 10:14:48.296[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6848e290) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5b9b7ec6)
+2025-04-30 10:14:48.296[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1e0dbcab) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@3a37ff6f)
+2025-04-30 10:14:48.296[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@15c4c6db) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1529f7eb)
+2025-04-30 10:14:48.296[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@66b2f901) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@63fbbe3f)
+2025-04-30 10:14:48.296[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@50ba4e85) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@a767dd6)
+2025-04-30 10:14:48.296[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7bfdf768) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@45c9a46e)
+2025-04-30 10:14:49.640[restartedMain][JtaPlatformInitiator:59][INFO ] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 10:14:49.662[restartedMain][HikariDataSource:109][INFO ] - HikariPool-1 - Starting...
+2025-04-30 10:14:49.964[restartedMain][HikariPool:554][INFO ] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2bd3b511
+2025-04-30 10:14:49.967[restartedMain][HikariDataSource:122][INFO ] - HikariPool-1 - Start completed.
+2025-04-30 10:14:50.494[restartedMain][LocalContainerEntityManagerFactoryBean:437][INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:14:51.197[restartedMain][JpaBaseConfiguration$JpaWebConfiguration:236][WARN ] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-30 10:14:51.230[restartedMain][InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:113][INFO ] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-30 10:14:52.152[restartedMain][OptionalLiveReloadServer:59][INFO ] - LiveReload server is running on port 35729
+2025-04-30 10:14:52.179[restartedMain][Http11NioProtocol:173][INFO ] - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:14:52.210[restartedMain][TomcatWebServer:243][INFO ] - Tomcat started on port 8080 (http) with context path '/'
+2025-04-30 10:14:52.223[restartedMain][ApiApplication:56][INFO ] - Started ApiApplication in 8.033 seconds (process running for 9.448)
+2025-04-30 10:14:52.228[restartedMain][ApiApplication:13][INFO ] - 
+
+======================================== ApiApplication started ========================================
+
+
+2025-04-30 10:14:54.171[http-nio-8080-exec-2][[/]:173][INFO ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 10:14:54.172[http-nio-8080-exec-2][DispatcherServlet:532][INFO ] - Initializing Servlet 'dispatcherServlet'
+2025-04-30 10:14:54.174[http-nio-8080-exec-2][DispatcherServlet:554][INFO ] - Completed initialization in 2 ms
+2025-04-30 10:15:38.503[SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean:650][INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:15:38.511[SpringApplicationShutdownHook][HikariDataSource:349][INFO ] - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:15:38.511[SpringApplicationShutdownHook][HikariDataSource:351][INFO ] - HikariPool-1 - Shutdown completed.
+2025-04-30 10:15:43.636[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:15:43.636[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:15:43.716[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 52740 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:15:43.718[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:15:43.794[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:15:43.794[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:15:45.006[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:15:45.114[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 81 ms. Found 1 JPA repository interface.
+2025-04-30 10:15:46.062[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:15:46.076[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:15:46.078[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:15:46.079[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:15:46.169[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:15:46.170[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 2375 ms
+2025-04-30 10:15:46.404[restartedMain][LogHelper:31][INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:15:46.473[restartedMain][Version:44][INFO ] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-04-30 10:15:46.517[restartedMain][RegionFactoryInitiator:50][INFO ] - HHH000026: Second-level cache disabled
+2025-04-30 10:15:47.084[restartedMain][SpringPersistenceUnitInfo:87][INFO ] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:15:47.105[restartedMain][deprecation:197][WARN ] - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-04-30 10:15:47.127[restartedMain][deprecation:153][WARN ] - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-30 10:15:47.130[restartedMain][deprecation:101][WARN ] - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-30 10:15:47.164[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2f8d312e) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5315d890)
+2025-04-30 10:15:47.165[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1f9c064b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2102c18b)
+2025-04-30 10:15:47.165[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@674080c4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1aec05e4)
+2025-04-30 10:15:47.166[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@65bdf6ac) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@52847d09)
+2025-04-30 10:15:47.166[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@31a1813d) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4b1871c8)
+2025-04-30 10:15:47.166[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@411af691) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@3087b78e)
+2025-04-30 10:15:47.166[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@d9270ca) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@50cc681)
+2025-04-30 10:15:47.166[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@13b406cf) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1e82e8f0)
+2025-04-30 10:15:47.167[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@88cfca) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@63532994)
+2025-04-30 10:15:48.531[restartedMain][JtaPlatformInitiator:59][INFO ] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 10:15:48.555[restartedMain][HikariDataSource:109][INFO ] - HikariPool-1 - Starting...
+2025-04-30 10:15:48.851[restartedMain][HikariPool:554][INFO ] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6235a99e
+2025-04-30 10:15:48.854[restartedMain][HikariDataSource:122][INFO ] - HikariPool-1 - Start completed.
+2025-04-30 10:15:49.391[restartedMain][LocalContainerEntityManagerFactoryBean:437][INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:15:50.328[restartedMain][JpaBaseConfiguration$JpaWebConfiguration:236][WARN ] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-30 10:15:50.411[restartedMain][InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:113][INFO ] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-30 10:15:52.367[restartedMain][OptionalLiveReloadServer:59][INFO ] - LiveReload server is running on port 35729
+2025-04-30 10:15:52.431[restartedMain][Http11NioProtocol:173][INFO ] - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:15:52.506[restartedMain][TomcatWebServer:243][INFO ] - Tomcat started on port 8080 (http) with context path '/'
+2025-04-30 10:15:52.530[restartedMain][ApiApplication:56][INFO ] - Started ApiApplication in 9.589 seconds (process running for 10.719)
+2025-04-30 10:15:52.546[restartedMain][ApiApplication:13][INFO ] - 
+
+======================================== ApiApplication started ========================================
+
+
+2025-04-30 10:16:24.184[http-nio-8080-exec-1][[/]:173][INFO ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 10:16:24.184[http-nio-8080-exec-1][DispatcherServlet:532][INFO ] - Initializing Servlet 'dispatcherServlet'
+2025-04-30 10:16:24.184[http-nio-8080-exec-1][DispatcherServlet:554][INFO ] - Completed initialization in 0 ms
+2025-04-30 10:19:45.362[SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean:650][INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:19:45.368[SpringApplicationShutdownHook][HikariDataSource:349][INFO ] - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:19:45.390[SpringApplicationShutdownHook][HikariDataSource:351][INFO ] - HikariPool-1 - Shutdown completed.
+2025-04-30 10:36:26.600[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:36:26.601[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:36:26.691[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 20676 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:36:26.691[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:36:26.778[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:36:26.778[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:36:28.308[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:36:28.404[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 79 ms. Found 1 JPA repository interface.
+2025-04-30 10:36:29.568[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:36:29.582[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:36:29.591[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:36:29.594[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:36:29.726[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:36:29.726[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 2941 ms
+2025-04-30 10:36:30.014[restartedMain][LogHelper:31][INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:36:30.130[restartedMain][Version:44][INFO ] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-04-30 10:36:30.191[restartedMain][RegionFactoryInitiator:50][INFO ] - HHH000026: Second-level cache disabled
+2025-04-30 10:36:30.675[restartedMain][SpringPersistenceUnitInfo:87][INFO ] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:36:30.706[restartedMain][deprecation:197][WARN ] - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-04-30 10:36:30.752[restartedMain][deprecation:153][WARN ] - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-30 10:36:30.752[restartedMain][deprecation:101][WARN ] - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-30 10:36:30.793[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@4d8d2f17) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@258403bd)
+2025-04-30 10:36:30.793[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@228dd8) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@267ef795)
+2025-04-30 10:36:30.793[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@22f81da) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7b3f3c9)
+2025-04-30 10:36:30.793[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@136bf2aa) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@42f87d0d)
+2025-04-30 10:36:30.793[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@3ca715d9) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2412943f)
+2025-04-30 10:36:30.793[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6820ccb5) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6931d4a9)
+2025-04-30 10:36:30.793[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6dbc1d8b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5dbfcf6f)
+2025-04-30 10:36:30.793[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@3314f509) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@54e7fb5e)
+2025-04-30 10:36:30.801[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@593ae40c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@7add8cf3)
+2025-04-30 10:36:32.319[restartedMain][JtaPlatformInitiator:59][INFO ] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 10:36:32.344[restartedMain][HikariDataSource:109][INFO ] - HikariPool-1 - Starting...
+2025-04-30 10:36:32.691[restartedMain][HikariPool:554][INFO ] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d847c38
+2025-04-30 10:36:32.726[restartedMain][HikariDataSource:122][INFO ] - HikariPool-1 - Start completed.
+2025-04-30 10:36:33.331[restartedMain][LocalContainerEntityManagerFactoryBean:437][INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:36:34.991[restartedMain][JpaBaseConfiguration$JpaWebConfiguration:236][WARN ] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-30 10:36:35.078[restartedMain][InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:113][INFO ] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-30 10:36:37.125[restartedMain][OptionalLiveReloadServer:59][INFO ] - LiveReload server is running on port 35729
+2025-04-30 10:36:37.199[restartedMain][Http11NioProtocol:173][INFO ] - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:36:37.281[restartedMain][TomcatWebServer:243][INFO ] - Tomcat started on port 8080 (http) with context path '/'
+2025-04-30 10:36:37.305[restartedMain][ApiApplication:56][INFO ] - Started ApiApplication in 11.566 seconds (process running for 14.616)
+2025-04-30 10:36:37.315[restartedMain][ApiApplication:13][INFO ] - 
+
+======================================== ApiApplication started ========================================
+
+
+2025-04-30 10:36:50.948[http-nio-8080-exec-1][[/]:173][INFO ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 10:36:50.948[http-nio-8080-exec-1][DispatcherServlet:532][INFO ] - Initializing Servlet 'dispatcherServlet'
+2025-04-30 10:36:50.956[http-nio-8080-exec-1][DispatcherServlet:554][INFO ] - Completed initialization in 8 ms
+2025-04-30 10:37:15.115[SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean:650][INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:37:15.115[SpringApplicationShutdownHook][HikariDataSource:349][INFO ] - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:37:15.132[SpringApplicationShutdownHook][HikariDataSource:351][INFO ] - HikariPool-1 - Shutdown completed.
+2025-04-30 10:37:19.957[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:37:19.959[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:37:20.036[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 10044 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:37:20.038[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:37:20.115[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:37:20.117[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:37:21.260[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:37:21.347[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 75 ms. Found 1 JPA repository interface.
+2025-04-30 10:37:22.244[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:37:22.259[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:37:22.262[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:37:22.263[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:37:22.377[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:37:22.378[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 2261 ms
+2025-04-30 10:37:22.595[restartedMain][LogHelper:31][INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:37:22.668[restartedMain][Version:44][INFO ] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-04-30 10:37:22.715[restartedMain][RegionFactoryInitiator:50][INFO ] - HHH000026: Second-level cache disabled
+2025-04-30 10:37:23.149[restartedMain][SpringPersistenceUnitInfo:87][INFO ] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:37:23.167[restartedMain][deprecation:197][WARN ] - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-04-30 10:37:23.185[restartedMain][deprecation:153][WARN ] - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-30 10:37:23.187[restartedMain][deprecation:101][WARN ] - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-30 10:37:23.210[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6a528c75) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1eb7dfe5)
+2025-04-30 10:37:23.210[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@54ab674b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@831c04c)
+2025-04-30 10:37:23.211[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@76fed41b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@561675d6)
+2025-04-30 10:37:23.211[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5988d160) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5f3d49bd)
+2025-04-30 10:37:23.211[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5f63004d) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@3a3e66b2)
+2025-04-30 10:37:23.212[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2522b344) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@106766fc)
+2025-04-30 10:37:23.212[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@57c16dd5) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1e038a69)
+2025-04-30 10:37:23.212[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2e8ba27e) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5f071d5)
+2025-04-30 10:37:23.213[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@59831b7b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5bd192e0)
+2025-04-30 10:37:24.570[restartedMain][JtaPlatformInitiator:59][INFO ] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 10:37:24.595[restartedMain][HikariDataSource:109][INFO ] - HikariPool-1 - Starting...
+2025-04-30 10:37:24.932[restartedMain][HikariPool:554][INFO ] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37613394
+2025-04-30 10:37:24.938[restartedMain][HikariDataSource:122][INFO ] - HikariPool-1 - Start completed.
+2025-04-30 10:37:25.558[restartedMain][LocalContainerEntityManagerFactoryBean:437][INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:37:26.287[restartedMain][JpaBaseConfiguration$JpaWebConfiguration:236][WARN ] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-30 10:37:26.332[restartedMain][InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:113][INFO ] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-30 10:37:27.241[restartedMain][OptionalLiveReloadServer:59][INFO ] - LiveReload server is running on port 35729
+2025-04-30 10:37:27.271[restartedMain][Http11NioProtocol:173][INFO ] - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:37:27.307[restartedMain][TomcatWebServer:243][INFO ] - Tomcat started on port 8080 (http) with context path '/'
+2025-04-30 10:37:27.321[restartedMain][ApiApplication:56][INFO ] - Started ApiApplication in 8.03 seconds (process running for 9.361)
+2025-04-30 10:37:27.325[restartedMain][ApiApplication:13][INFO ] - 
+
+======================================== ApiApplication started ========================================
+
+
+2025-04-30 10:37:32.637[http-nio-8080-exec-1][[/]:173][INFO ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 10:37:32.638[http-nio-8080-exec-1][DispatcherServlet:532][INFO ] - Initializing Servlet 'dispatcherServlet'
+2025-04-30 10:37:32.639[http-nio-8080-exec-1][DispatcherServlet:554][INFO ] - Completed initialization in 1 ms
+2025-04-30 10:41:18.991[SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean:650][INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:41:18.991[SpringApplicationShutdownHook][HikariDataSource:349][INFO ] - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:41:19.007[SpringApplicationShutdownHook][HikariDataSource:351][INFO ] - HikariPool-1 - Shutdown completed.
+2025-04-30 10:41:26.619[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:41:26.617[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:41:26.753[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 33132 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:41:26.755[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:41:26.844[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:41:26.846[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:41:28.157[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:41:28.238[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2025-04-30 10:41:29.196[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:41:29.208[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:41:29.210[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:41:29.211[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:41:29.295[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:41:29.295[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 2449 ms
+2025-04-30 10:41:29.540[restartedMain][LogHelper:31][INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:41:29.611[restartedMain][Version:44][INFO ] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-04-30 10:41:29.671[restartedMain][RegionFactoryInitiator:50][INFO ] - HHH000026: Second-level cache disabled
+2025-04-30 10:41:30.134[restartedMain][SpringPersistenceUnitInfo:87][INFO ] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:41:30.161[restartedMain][deprecation:197][WARN ] - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-04-30 10:41:30.183[restartedMain][deprecation:153][WARN ] - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-30 10:41:30.213[restartedMain][deprecation:101][WARN ] - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-30 10:41:30.240[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@3d48b89a) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@65a64111)
+2025-04-30 10:41:30.241[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5d19f0b3) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@13d30f7c)
+2025-04-30 10:41:30.241[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6b27e9f4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@3cde8348)
+2025-04-30 10:41:30.242[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2ed07008) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@25f32241)
+2025-04-30 10:41:30.242[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@71cf0742) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@39c30ef0)
+2025-04-30 10:41:30.243[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@14be79f0) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@28e3a00c)
+2025-04-30 10:41:30.244[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@211f4745) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@a7918)
+2025-04-30 10:41:30.244[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@671ce110) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@52cade3f)
+2025-04-30 10:41:30.244[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@9348e4c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5a25f4cb)
+2025-04-30 10:41:31.730[restartedMain][JtaPlatformInitiator:59][INFO ] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 10:41:31.759[restartedMain][HikariDataSource:109][INFO ] - HikariPool-1 - Starting...
+2025-04-30 10:41:32.119[restartedMain][HikariPool:554][INFO ] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@236c3310
+2025-04-30 10:41:32.126[restartedMain][HikariDataSource:122][INFO ] - HikariPool-1 - Start completed.
+2025-04-30 10:41:32.739[restartedMain][LocalContainerEntityManagerFactoryBean:437][INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:41:33.469[restartedMain][JpaBaseConfiguration$JpaWebConfiguration:236][WARN ] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-30 10:41:33.508[restartedMain][InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:113][INFO ] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-30 10:41:34.444[restartedMain][OptionalLiveReloadServer:59][INFO ] - LiveReload server is running on port 35729
+2025-04-30 10:41:34.479[restartedMain][Http11NioProtocol:173][INFO ] - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:41:34.511[restartedMain][TomcatWebServer:243][INFO ] - Tomcat started on port 8080 (http) with context path '/'
+2025-04-30 10:41:34.523[restartedMain][ApiApplication:56][INFO ] - Started ApiApplication in 8.785 seconds (process running for 10.578)
+2025-04-30 10:41:34.528[restartedMain][ApiApplication:13][INFO ] - 
+
+======================================== ApiApplication started ========================================
+
+
+2025-04-30 10:41:36.498[http-nio-8080-exec-1][[/]:173][INFO ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 10:41:36.499[http-nio-8080-exec-1][DispatcherServlet:532][INFO ] - Initializing Servlet 'dispatcherServlet'
+2025-04-30 10:41:36.499[http-nio-8080-exec-1][DispatcherServlet:554][INFO ] - Completed initialization in 0 ms
+2025-04-30 10:41:36.617[http-nio-8080-exec-1][GlobalResponseLogger:37][INFO ] - ✅ Response [/bookmoment-swagger-ui/index.html]: null
+2025-04-30 10:41:50.320[http-nio-8080-exec-3][GlobalResponseLogger:37][INFO ] - ✅ Response [/bookmoment-swagger-ui/index.html]: null
+2025-04-30 10:44:04.115[SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean:650][INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:44:04.131[SpringApplicationShutdownHook][HikariDataSource:349][INFO ] - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:44:04.131[SpringApplicationShutdownHook][HikariDataSource:351][INFO ] - HikariPool-1 - Shutdown completed.
+2025-04-30 10:44:10.491[background-preinit][Version:21][INFO ] - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:44:10.490[restartedMain][SpringApplication:58][INFO ] - 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.3.1)[0;39m
+
+
+2025-04-30 10:44:10.567[restartedMain][ApiApplication:50][INFO ] - Starting ApiApplication using Java 17.0.14 with PID 27624 (D:\Programming\bookmoment\api\build\classes\java\main started by jeong in D:\Programming\bookmoment)
+2025-04-30 10:44:10.569[restartedMain][ApiApplication:654][INFO ] - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:44:10.647[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-30 10:44:10.648[restartedMain][DevToolsPropertyDefaultsPostProcessor:252][INFO ] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-30 10:44:11.806[restartedMain][RepositoryConfigurationDelegate:143][INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:44:11.883[restartedMain][RepositoryConfigurationDelegate:211][INFO ] - Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
+2025-04-30 10:44:12.729[restartedMain][TomcatWebServer:111][INFO ] - Tomcat initialized with port 8080 (http)
+2025-04-30 10:44:12.741[restartedMain][Http11NioProtocol:173][INFO ] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:44:12.743[restartedMain][StandardService:173][INFO ] - Starting service [Tomcat]
+2025-04-30 10:44:12.744[restartedMain][StandardEngine:173][INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-04-30 10:44:12.863[restartedMain][[/]:173][INFO ] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:44:12.864[restartedMain][ServletWebServerApplicationContext:296][INFO ] - Root WebApplicationContext: initialization completed in 2215 ms
+2025-04-30 10:44:13.113[restartedMain][LogHelper:31][INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:44:13.186[restartedMain][Version:44][INFO ] - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-04-30 10:44:13.232[restartedMain][RegionFactoryInitiator:50][INFO ] - HHH000026: Second-level cache disabled
+2025-04-30 10:44:13.689[restartedMain][SpringPersistenceUnitInfo:87][INFO ] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:44:13.713[restartedMain][deprecation:197][WARN ] - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2025-04-30 10:44:13.743[restartedMain][deprecation:153][WARN ] - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-30 10:44:13.745[restartedMain][deprecation:101][WARN ] - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-30 10:44:13.775[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5ee08550) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6e2f87f)
+2025-04-30 10:44:13.775[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@62d567d8) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6b4a8e9c)
+2025-04-30 10:44:13.776[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@315a5ca0) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@20ea7bf4)
+2025-04-30 10:44:13.776[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@69c82396) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@56497e5d)
+2025-04-30 10:44:13.776[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@35158768) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@46d36fe5)
+2025-04-30 10:44:13.776[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6e2f303a) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@73090034)
+2025-04-30 10:44:13.776[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6abee7fa) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@374f110f)
+2025-04-30 10:44:13.777[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2076493c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1b45e5a6)
+2025-04-30 10:44:13.778[restartedMain][DdlTypeRegistry:64][DEBUG] - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6d95003) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@49d1febe)
+2025-04-30 10:44:15.215[restartedMain][JtaPlatformInitiator:59][INFO ] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 10:44:15.240[restartedMain][HikariDataSource:109][INFO ] - HikariPool-1 - Starting...
+2025-04-30 10:44:15.554[restartedMain][HikariPool:554][INFO ] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55147558
+2025-04-30 10:44:15.558[restartedMain][HikariDataSource:122][INFO ] - HikariPool-1 - Start completed.
+2025-04-30 10:44:16.161[restartedMain][LocalContainerEntityManagerFactoryBean:437][INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:44:16.805[restartedMain][JpaBaseConfiguration$JpaWebConfiguration:236][WARN ] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-30 10:44:16.845[restartedMain][InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:113][INFO ] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-30 10:44:17.709[restartedMain][OptionalLiveReloadServer:59][INFO ] - LiveReload server is running on port 35729
+2025-04-30 10:44:17.742[restartedMain][Http11NioProtocol:173][INFO ] - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:44:17.773[restartedMain][TomcatWebServer:243][INFO ] - Tomcat started on port 8080 (http) with context path '/'
+2025-04-30 10:44:17.789[restartedMain][ApiApplication:56][INFO ] - Started ApiApplication in 7.993 seconds (process running for 9.206)
+2025-04-30 10:44:17.799[restartedMain][ApiApplication:13][INFO ] - 
+
+======================================== ApiApplication started ========================================
+
+
+2025-04-30 10:44:22.084[http-nio-8080-exec-1][[/]:173][INFO ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 10:44:22.084[http-nio-8080-exec-1][DispatcherServlet:532][INFO ] - Initializing Servlet 'dispatcherServlet'
+2025-04-30 10:44:22.086[http-nio-8080-exec-1][DispatcherServlet:554][INFO ] - Completed initialization in 2 ms
+2025-04-30 10:44:40.745[http-nio-8080-exec-5][GlobalResponseLogger:37][INFO ] - ✅ Response [/swagger-ui/index.html]: null
+2025-04-30 10:44:41.140[http-nio-8080-exec-4][GlobalResponseLogger:37][INFO ] - ✅ Response [/v3/api-docs/swagger-config]: {configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/swagger-ui/oauth2-redirect.html, urls=[SwaggerUrl{url='/v3/api-docs/api', name='api'}], validatorUrl=}
+2025-04-30 10:44:42.314[http-nio-8080-exec-7][AbstractOpenApiResource:371][INFO ] - Init duration for springdoc-openapi is: 1015 ms
+2025-04-30 10:44:42.351[http-nio-8080-exec-7][GlobalResponseLogger:37][INFO ] - ✅ Response [/v3/api-docs/api]: [123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 102, 111, 34, 58, 123, 34, 116, 105, 116, 108, 101, 34, 58, 34, 97, 112, 105, 32, 65, 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 32, 65, 80, 73, 34, 44, 34, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 34, 58, 34, 34, 125, 44, 34, 115, 101, 114, 118, 101, 114, 115, 34, 58, 91, 123, 34, 117, 114, 108, 34, 58, 34, 47, 34, 125, 93, 44, 34, 115, 101, 99, 117, 114, 105, 116, 121, 34, 58, 91, 123, 34, 98, 101, 97, 114, 101, 114, 65, 117, 116, 104, 34, 58, 91, 93, 125, 93, 44, 34, 112, 97, 116, 104, 115, 34, 58, 123, 34, 47, 97, 112, 105, 47, 109, 101, 109, 98, 101, 114, 115, 47, 115, 105, 103, 110, 117, 112, 34, 58, 123, 34, 112, 111, 115, 116, 34, 58, 123, 34, 116, 97, 103, 115, 34, 58, 91, 34, 109, 101, 109, 98, 101, 114, 45, 99, 111, 110, 116, 114, 111, 108, 108, 101, 114, 34, 93, 44, 34, 111, 112, 101, 114, 97, 116, 105, 111, 110, 73, 100, 34, 58, 34, 115, 105, 103, 110, 117, 112, 34, 44, 34, 114, 101, 113, 117, 101, 115, 116, 66, 111, 100, 121, 34, 58, 123, 34, 99, 111, 110, 116, 101, 110, 116, 34, 58, 123, 34, 97, 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 47, 106, 115, 111, 110, 34, 58, 123, 34, 115, 99, 104, 101, 109, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 77, 101, 109, 98, 101, 114, 83, 105, 103, 110, 117, 112, 82, 101, 113, 117, 101, 115, 116, 68, 116, 111, 34, 125, 125, 125, 44, 34, 114, 101, 113, 117, 105, 114, 101, 100, 34, 58, 116, 114, 117, 101, 125, 44, 34, 114, 101, 115, 112, 111, 110, 115, 101, 115, 34, 58, 123, 34, 52, 48, 48, 34, 58, 123, 34, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 34, 58, 34, 66, 97, 100, 32, 82, 101, 113, 117, 101, 115, 116, 34, 44, 34, 99, 111, 110, 116, 101, 110, 116, 34, 58, 123, 34, 42, 47, 42, 34, 58, 123, 34, 115, 99, 104, 101, 109, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 68, 97, 116, 97, 82, 101, 115, 112, 111, 110, 115, 101, 79, 98, 106, 101, 99, 116, 34, 125, 125, 125, 125, 44, 34, 50, 48, 48, 34, 58, 123, 34, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 34, 58, 34, 79, 75, 34, 44, 34, 99, 111, 110, 116, 101, 110, 116, 34, 58, 123, 34, 42, 47, 42, 34, 58, 123, 34, 115, 99, 104, 101, 109, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 68, 97, 116, 97, 82, 101, 115, 112, 111, 110, 115, 101, 79, 98, 106, 101, 99, 116, 34, 125, 125, 125, 125, 125, 125, 125, 44, 34, 47, 97, 112, 105, 47, 109, 101, 109, 98, 101, 114, 115, 47, 112, 114, 111, 102, 105, 108, 101, 34, 58, 123, 34, 112, 111, 115, 116, 34, 58, 123, 34, 116, 97, 103, 115, 34, 58, 91, 34, 109, 101, 109, 98, 101, 114, 45, 99, 111, 110, 116, 114, 111, 108, 108, 101, 114, 34, 93, 44, 34, 111, 112, 101, 114, 97, 116, 105, 111, 110, 73, 100, 34, 58, 34, 112, 114, 111, 102, 105, 108, 101, 34, 44, 34, 114, 101, 115, 112, 111, 110, 115, 101, 115, 34, 58, 123, 34, 52, 48, 48, 34, 58, 123, 34, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 34, 58, 34, 66, 97, 100, 32, 82, 101, 113, 117, 101, 115, 116, 34, 44, 34, 99, 111, 110, 116, 101, 110, 116, 34, 58, 123, 34, 42, 47, 42, 34, 58, 123, 34, 115, 99, 104, 101, 109, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 68, 97, 116, 97, 82, 101, 115, 112, 111, 110, 115, 101, 79, 98, 106, 101, 99, 116, 34, 125, 125, 125, 125, 44, 34, 50, 48, 48, 34, 58, 123, 34, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 34, 58, 34, 79, 75, 34, 44, 34, 99, 111, 110, 116, 101, 110, 116, 34, 58, 123, 34, 42, 47, 42, 34, 58, 123, 34, 115, 99, 104, 101, 109, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 68, 97, 116, 97, 82, 101, 115, 112, 111, 110, 115, 101, 77, 101, 109, 98, 101, 114, 73, 110, 102, 111, 82, 101, 115, 34, 125, 125, 125, 125, 125, 125, 125, 44, 34, 47, 97, 112, 105, 47, 97, 117, 116, 104, 47, 108, 111, 103, 105, 110, 34, 58, 123, 34, 112, 111, 115, 116, 34, 58, 123, 34, 116, 97, 103, 115, 34, 58, 91, 34, 97, 117, 116, 104, 45, 99, 111, 110, 116, 114, 111, 108, 108, 101, 114, 34, 93, 44, 34, 111, 112, 101, 114, 97, 116, 105, 111, 110, 73, 100, 34, 58, 34, 108, 111, 103, 105, 110, 34, 44, 34, 114, 101, 113, 117, 101, 115, 116, 66, 111, 100, 121, 34, 58, 123, 34, 99, 111, 110, 116, 101, 110, 116, 34, 58, 123, 34, 97, 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 47, 106, 115, 111, 110, 34, 58, 123, 34, 115, 99, 104, 101, 109, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 76, 111, 103, 105, 110, 82, 101, 113, 34, 125, 125, 125, 44, 34, 114, 101, 113, 117, 105, 114, 101, 100, 34, 58, 116, 114, 117, 101, 125, 44, 34, 114, 101, 115, 112, 111, 110, 115, 101, 115, 34, 58, 123, 34, 52, 48, 48, 34, 58, 123, 34, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 34, 58, 34, 66, 97, 100, 32, 82, 101, 113, 117, 101, 115, 116, 34, 44, 34, 99, 111, 110, 116, 101, 110, 116, 34, 58, 123, 34, 42, 47, 42, 34, 58, 123, 34, 115, 99, 104, 101, 109, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 68, 97, 116, 97, 82, 101, 115, 112, 111, 110, 115, 101, 79, 98, 106, 101, 99, 116, 34, 125, 125, 125, 125, 44, 34, 50, 48, 48, 34, 58, 123, 34, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 34, 58, 34, 79, 75, 34, 44, 34, 99, 111, 110, 116, 101, 110, 116, 34, 58, 123, 34, 42, 47, 42, 34, 58, 123, 34, 115, 99, 104, 101, 109, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 68, 97, 116, 97, 82, 101, 115, 112, 111, 110, 115, 101, 76, 111, 103, 105, 110, 82, 101, 115, 117, 108, 116, 82, 101, 115, 34, 125, 125, 125, 125, 125, 125, 125, 125, 44, 34, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 34, 58, 123, 34, 115, 99, 104, 101, 109, 97, 115, 34, 58, 123, 34, 68, 97, 116, 97, 82, 101, 115, 112, 111, 110, 115, 101, 79, 98, 106, 101, 99, 116, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 111, 98, 106, 101, 99, 116, 34, 44, 34, 112, 114, 111, 112, 101, 114, 116, 105, 101, 115, 34, 58, 123, 34, 100, 97, 116, 101, 84, 105, 109, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 118, 101, 114, 115, 105, 111, 110, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 99, 111, 100, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 105, 110, 116, 101, 103, 101, 114, 34, 44, 34, 102, 111, 114, 109, 97, 116, 34, 58, 34, 105, 110, 116, 51, 50, 34, 125, 44, 34, 109, 101, 115, 115, 97, 103, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 100, 97, 116, 97, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 111, 98, 106, 101, 99, 116, 34, 125, 125, 125, 44, 34, 77, 101, 109, 98, 101, 114, 83, 105, 103, 110, 117, 112, 82, 101, 113, 117, 101, 115, 116, 68, 116, 111, 34, 58, 123, 34, 114, 101, 113, 117, 105, 114, 101, 100, 34, 58, 91, 34, 101, 109, 97, 105, 108, 34, 44, 34, 110, 97, 109, 101, 34, 44, 34, 112, 97, 115, 115, 119, 100, 34, 44, 34, 116, 101, 108, 34, 93, 44, 34, 116, 121, 112, 101, 34, 58, 34, 111, 98, 106, 101, 99, 116, 34, 44, 34, 112, 114, 111, 112, 101, 114, 116, 105, 101, 115, 34, 58, 123, 34, 110, 97, 109, 101, 34, 58, 123, 34, 109, 97, 120, 76, 101, 110, 103, 116, 104, 34, 58, 50, 53, 44, 34, 109, 105, 110, 76, 101, 110, 103, 116, 104, 34, 58, 50, 44, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 101, 109, 97, 105, 108, 34, 58, 123, 34, 109, 97, 120, 76, 101, 110, 103, 116, 104, 34, 58, 53, 48, 44, 34, 109, 105, 110, 76, 101, 110, 103, 116, 104, 34, 58, 48, 44, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 112, 97, 115, 115, 119, 100, 34, 58, 123, 34, 109, 97, 120, 76, 101, 110, 103, 116, 104, 34, 58, 53, 48, 44, 34, 109, 105, 110, 76, 101, 110, 103, 116, 104, 34, 58, 56, 44, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 116, 101, 108, 34, 58, 123, 34, 112, 97, 116, 116, 101, 114, 110, 34, 58, 34, 94, 48, 49, 91, 48, 45, 57, 93, 123, 57, 125, 36, 34, 44, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 125, 125, 44, 34, 68, 97, 116, 97, 82, 101, 115, 112, 111, 110, 115, 101, 77, 101, 109, 98, 101, 114, 73, 110, 102, 111, 82, 101, 115, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 111, 98, 106, 101, 99, 116, 34, 44, 34, 112, 114, 111, 112, 101, 114, 116, 105, 101, 115, 34, 58, 123, 34, 100, 97, 116, 101, 84, 105, 109, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 118, 101, 114, 115, 105, 111, 110, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 99, 111, 100, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 105, 110, 116, 101, 103, 101, 114, 34, 44, 34, 102, 111, 114, 109, 97, 116, 34, 58, 34, 105, 110, 116, 51, 50, 34, 125, 44, 34, 109, 101, 115, 115, 97, 103, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 100, 97, 116, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 77, 101, 109, 98, 101, 114, 73, 110, 102, 111, 82, 101, 115, 34, 125, 125, 125, 44, 34, 77, 101, 109, 98, 101, 114, 73, 110, 102, 111, 82, 101, 115, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 111, 98, 106, 101, 99, 116, 34, 44, 34, 112, 114, 111, 112, 101, 114, 116, 105, 101, 115, 34, 58, 123, 34, 105, 100, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 105, 110, 116, 101, 103, 101, 114, 34, 44, 34, 102, 111, 114, 109, 97, 116, 34, 58, 34, 105, 110, 116, 54, 52, 34, 125, 44, 34, 110, 97, 109, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 101, 109, 97, 105, 108, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 116, 101, 108, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 114, 111, 108, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 114, 101, 103, 84, 105, 109, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 44, 34, 102, 111, 114, 109, 97, 116, 34, 58, 34, 100, 97, 116, 101, 45, 116, 105, 109, 101, 34, 125, 44, 34, 100, 101, 116, 97, 105, 108, 82, 101, 115, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 85, 115, 101, 114, 73, 110, 102, 111, 68, 101, 116, 97, 105, 108, 82, 101, 115, 34, 125, 44, 34, 108, 111, 99, 107, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 98, 111, 111, 108, 101, 97, 110, 34, 125, 44, 34, 119, 105, 116, 104, 100, 114, 97, 119, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 98, 111, 111, 108, 101, 97, 110, 34, 125, 125, 125, 44, 34, 85, 115, 101, 114, 73, 110, 102, 111, 68, 101, 116, 97, 105, 108, 82, 101, 115, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 111, 98, 106, 101, 99, 116, 34, 44, 34, 112, 114, 111, 112, 101, 114, 116, 105, 101, 115, 34, 58, 123, 34, 97, 100, 100, 114, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 125, 125, 44, 34, 76, 111, 103, 105, 110, 82, 101, 113, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 111, 98, 106, 101, 99, 116, 34, 44, 34, 112, 114, 111, 112, 101, 114, 116, 105, 101, 115, 34, 58, 123, 34, 101, 109, 97, 105, 108, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 112, 97, 115, 115, 119, 100, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 125, 125, 44, 34, 68, 97, 116, 97, 82, 101, 115, 112, 111, 110, 115, 101, 76, 111, 103, 105, 110, 82, 101, 115, 117, 108, 116, 82, 101, 115, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 111, 98, 106, 101, 99, 116, 34, 44, 34, 112, 114, 111, 112, 101, 114, 116, 105, 101, 115, 34, 58, 123, 34, 100, 97, 116, 101, 84, 105, 109, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 118, 101, 114, 115, 105, 111, 110, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 99, 111, 100, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 105, 110, 116, 101, 103, 101, 114, 34, 44, 34, 102, 111, 114, 109, 97, 116, 34, 58, 34, 105, 110, 116, 51, 50, 34, 125, 44, 34, 109, 101, 115, 115, 97, 103, 101, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125, 44, 34, 100, 97, 116, 97, 34, 58, 123, 34, 36, 114, 101, 102, 34, 58, 34, 35, 47, 99, 111, 109, 112, 111, 110, 101, 110, 116, 115, 47, 115, 99, 104, 101, 109, 97, 115, 47, 76, 111, 103, 105, 110, 82, 101, 115, 117, 108, 116, 82, 101, 115, 34, 125, 125, 125, 44, 34, 76, 111, 103, 105, 110, 82, 101, 115, 117, 108, 116, 82, 101, 115, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 111, 98, 106, 101, 99, 116, 34, 44, 34, 112, 114, 111, 112, 101, 114, 116, 105, 101, 115, 34, 58, 123, 34, 116, 111, 107, 101, 110, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 44, 34, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 34, 58, 34, -21, -95, -100, -22, -73, -72, -20, -99, -72, 32, -20, -99, -72, -20, -90, -99, 32, -19, -122, -96, -19, -127, -80, 34, 125, 125, 125, 125, 44, 34, 112, 97, 114, 97, 109, 101, 116, 101, 114, 115, 34, 58, 123, 34, 65, 99, 99, 101, 112, 116, 45, 76, 97, 110, 103, 117, 97, 103, 101, 34, 58, 123, 34, 105, 110, 34, 58, 34, 104, 101, 97, 100, 101, 114, 34, 44, 34, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 34, 58, 34, 76, 97, 110, 103, 117, 97, 103, 101, 32, 67, 111, 100, 101, 34, 44, 34, 101, 120, 97, 109, 112, 108, 101, 34, 58, 34, 107, 111, 95, 75, 82, 34, 125, 125, 44, 34, 115, 101, 99, 117, 114, 105, 116, 121, 83, 99, 104, 101, 109, 101, 115, 34, 58, 123, 34, 98, 101, 97, 114, 101, 114, 65, 117, 116, 104, 34, 58, 123, 34, 116, 121, 112, 101, 34, 58, 34, 104, 116, 116, 112, 34, 44, 34, 115, 99, 104, 101, 109, 101, 34, 58, 34, 98, 101, 97, 114, 101, 114, 34, 44, 34, 98, 101, 97, 114, 101, 114, 70, 111, 114, 109, 97, 116, 34, 58, 34, 74, 87, 84, 34, 125, 125, 125, 125]
+2025-04-30 10:45:35.704[SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean:650][INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:45:35.715[SpringApplicationShutdownHook][HikariDataSource:349][INFO ] - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:45:35.739[SpringApplicationShutdownHook][HikariDataSource:351][INFO ] - HikariPool-1 - Shutdown completed.
