@@ -27,6 +27,11 @@ public class Member extends BaseEntity {
     @Schema(description = "회원이름")
     private String name;
 
+//    @Column(name = "userId", length = 100, nullable = false)
+//    @Schema(description = "회원아이디")
+//    private String userId;
+//    보류
+
     @Column(name = "passwd", length = 100, nullable = false)
     @Schema(description = "비빌번호")
     private String passwd;
