@@ -7,7 +7,6 @@ import java.util.Set;
 public class CommonConstants {
     public static final String VALID_FIELD_NAME     = "name";
     public static final String VALID_FIELD_EMAIL    = "email";
-    public static final String VALID_FIELD_TEL      = "tel";
     public static final String VALID_FIELD_PASSWD   = "passwd";
 
     private static final Set<String> VALID_FIELDS = new HashSet<>();
@@ -15,7 +14,6 @@ public class CommonConstants {
         VALID_FIELDS.add(CommonConstants.VALID_FIELD_NAME);
         VALID_FIELDS.add(CommonConstants.VALID_FIELD_EMAIL);
         VALID_FIELDS.add(CommonConstants.VALID_FIELD_PASSWD);
-        VALID_FIELDS.add(CommonConstants.VALID_FIELD_TEL);
     }
 
     // 필드가 유효한지 확인하는 메서드

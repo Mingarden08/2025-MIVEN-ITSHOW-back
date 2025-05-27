@@ -1,6 +1,5 @@
 package com.bookmoment.api.dto.res;
 
-import com.bookmoment.api.constant.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

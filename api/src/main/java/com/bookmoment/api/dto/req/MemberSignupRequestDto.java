@@ -28,21 +28,12 @@ public class MemberSignupRequestDto {
     @Size(min = 8, max = 50, message = "비밀번호는 최소 8자 이상, 최대 50자 이하로 입력해주세요.")
     private String passwd;
 
-    @NotBlank(message = "전화번호는 필수 입력 값입니다.")
-    @Pattern(regexp = "^01[0-9]{9}$", message = "올바른 전화번호 형식(010xxxxxxxx)을 입력해주세요.")
-    private String tel;
-
-    //private Boolean isLock = false;      // 계정 잠금 여부 (기본값 false)
-    //private Boolean isWithdraw = false;  // 탈퇴 여부 (기본값 false)
 
     public Member toEntity() {
         return Member.builder()
                 .name(this.name)
                 .email(this.email)
                 .passwd(this.passwd)
-                .tel(this.tel)
-                .isLock(false)
-                .isWithdraw(false)
                 .build();
     }
 }

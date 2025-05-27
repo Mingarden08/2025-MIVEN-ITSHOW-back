@@ -1,6 +1,5 @@
 package com.bookmoment.api.service;
 
-import com.bookmoment.api.constant.Role;
 import com.bookmoment.api.dto.req.MemberProfileRequestDto;
 import com.bookmoment.api.dto.req.MemberSignupRequestDto;
 import com.bookmoment.api.dto.res.MemberInfoRes;
@@ -41,10 +40,6 @@ public class MemberService {
                         .id(member.getId())
                         .email(member.getEmail())
                         .name(member.getName())
-                        .tel(member.getTel())
-                        .isLock(member.isLock())
-                        .isWithdraw(member.isWithdraw())
-                        .role(member.getRole().getCode())
                         .regTime(member.getRegTime())
                         .build())
                 .orElseThrow(() -> new NoSuchElementException("해당 이메일의 사용자를 찾을 수 없습니다."));
@@ -55,23 +50,18 @@ public class MemberService {
      * 회원가입
      */
     public Member signup(MemberSignupRequestDto dto) {
-
         Optional<Member> memberOptional = memberRepository.findByEmail(dto.getEmail());
-        if (memberOptional.isEmpty()) {
 
-            //비밀번호 암호화.
-            String encodedPassword = passwordEncoder.encode(dto.getPasswd());
-            dto.setPasswd(encodedPassword);
-
-            Member member = dto.toEntity();
-            memberRepository.save(member);
-            return dto.toEntity();
-        } else {
-            Member member = memberOptional.get();
-            Role role = member.getRole();
-            log.info(" role : {}", role.getCode() + "/" + role.getName());
-            return member;
+        if (memberOptional.isPresent()) {
+            throw new IllegalStateException("이미 존재하는 이메일입니다.");
         }
+
+        // 비밀번호 암호화
+        String encodedPassword = passwordEncoder.encode(dto.getPasswd());
+        dto.setPasswd(encodedPassword);
+
+        Member member = dto.toEntity();
+        return memberRepository.save(member);
         //이메일 중복체크, 전화번호 중복체크
     }
 

@@ -50,8 +50,7 @@ public class GlobalExceptionHandler {
     private boolean isValidField(String field) {
         if (CommonConstants.VALID_FIELD_NAME.equals(field) ||
                 CommonConstants.VALID_FIELD_EMAIL.equals(field) ||
-                CommonConstants.VALID_FIELD_PASSWD.equals(field) ||
-                CommonConstants.VALID_FIELD_TEL.equals(field)) {
+                CommonConstants.VALID_FIELD_PASSWD.equals(field)) {
             return true;
         } else {
             return false;

@@ -22,7 +22,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         return org.springframework.security.core.userdetails.User.builder()
                 .username(member.getEmail())
                 .password(member.getPasswd())       // DB에 저장된 암호화된 비밀번호 사용
-                .roles(member.getRole().getName()) // 권한 설정
                 .build();
 
     }

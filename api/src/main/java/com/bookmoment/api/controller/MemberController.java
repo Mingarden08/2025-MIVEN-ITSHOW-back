@@ -34,8 +34,12 @@ public class MemberController {
     public ResponseEntity<DataResponse<?>> signup(@Valid @RequestBody MemberSignupRequestDto requestDto) {
 
         //TODO: - member service 처리
-        Member member = memberService.signup(requestDto);
-        return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, member));
+        try {
+            Member member = memberService.signup(requestDto);
+            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, member));
+        } catch (IllegalStateException e) {
+            return ResponseEntity.ok(DataResponse.of(ResponseCode.ALREADY_EXIST_USER_EMAIL, e.getMessage()));
+        }
     }
 
     @PostMapping("/profile")

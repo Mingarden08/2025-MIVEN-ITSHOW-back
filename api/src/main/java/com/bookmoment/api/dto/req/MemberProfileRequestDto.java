@@ -14,14 +14,12 @@ public class MemberProfileRequestDto {
     private String name;
     private String email;
     private String passwd;
-    private String tel;
 
-    public MemberProfileRequestDto(Long id, String name, String email, String passwd, String tel) {
+    public MemberProfileRequestDto(Long id, String name, String email, String passwd) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.passwd = passwd;
-        this.tel = tel;
     }
 
     public static MemberProfileRequestDto UserDto(Member member) {
@@ -29,8 +27,7 @@ public class MemberProfileRequestDto {
                 member.getId(),
                 member.getName(),
                 member.getEmail(),
-                member.getPasswd(),
-                member.getTel()
+                member.getPasswd()
         );
     }
 }
