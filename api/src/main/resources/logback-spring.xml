@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds"><!--// 설정변경을 새로 읽어 들이는 속성 추가 //-->
     <!-- log property 설정 파일 -->
-    <springProfile name="local">
-        <property resource="logback-local.properties"/>
-    </springProfile>
     <springProfile name="dev">
-        <property resource="logback-dev.properties"/>
+        <property resource="logback.properties"/>
     </springProfile>
 
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
