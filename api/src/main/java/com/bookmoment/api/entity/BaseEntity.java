@@ -3,7 +3,6 @@ package com.bookmoment.api.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.PrePersist;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
@@ -20,18 +19,18 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class BaseEntity {
-    @CreatedBy
-    @Column(name = "createdBy", length = 40, nullable = true, updatable = false)
-    private Long createdBy;
+//    @CreatedBy
+//    @Column(name = "createdBy", length = 40, nullable = true, updatable = false)
+//    private Long createdBy;
 
     @CreatedDate
     @Column(name = "regTime", updatable = false)
     @ColumnDefault("CURRENT_TIMESTAMP(6)")
     private LocalDateTime regTime;
 
-    @LastModifiedBy
-    @Column(name = "modifiedBy", length = 40, nullable = true, updatable = true)
-    private String modifiedBy;
+//    @LastModifiedBy
+//    @Column(name = "modifiedBy", length = 40, nullable = true, updatable = true)
+//    private String modifiedBy;
 
     @LastModifiedDate
     @Column(name = "updateTime", updatable = true)

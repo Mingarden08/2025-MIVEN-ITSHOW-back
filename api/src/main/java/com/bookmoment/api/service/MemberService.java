@@ -23,8 +23,11 @@ import java.util.Optional;
 @Slf4j
 public class MemberService {
     //add to repository static variables;
-    @Autowired
-    MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
+
+    private final GalleryService galleryService;
+
+    private final ProfileService profileService;
 
     private final PasswordEncoder passwordEncoder;
 
@@ -40,7 +43,6 @@ public class MemberService {
                         .id(member.getId())
                         .email(member.getEmail())
                         .name(member.getName())
-                        .regTime(member.getRegTime())
                         .build())
                 .orElseThrow(() -> new NoSuchElementException("해당 이메일의 사용자를 찾을 수 없습니다."));
     }
@@ -49,9 +51,9 @@ public class MemberService {
     /**
      * 회원가입
      */
-    public Member signup(MemberSignupRequestDto dto) {
+    public boolean signup(MemberSignupRequestDto dto) {
         Optional<Member> memberOptional = memberRepository.findByEmail(dto.getEmail());
-
+        //이메일 중복체크
         if (memberOptional.isPresent()) {
             throw new IllegalStateException("이미 존재하는 이메일입니다.");
         }
@@ -61,8 +63,8 @@ public class MemberService {
         dto.setPasswd(encodedPassword);
 
         Member member = dto.toEntity();
-        return memberRepository.save(member);
-        //이메일 중복체크, 전화번호 중복체크
+        memberRepository.save(member);
+        return true;
     }
 
     public Optional<MemberProfileRequestDto> profile(String email) {

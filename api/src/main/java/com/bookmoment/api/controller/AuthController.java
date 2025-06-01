@@ -26,9 +26,14 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<DataResponse<LoginResultRes>> login(@RequestBody LoginReq req) {
-        String token = authService.login(req);
         LoginResultRes res = new LoginResultRes();
-        res.setToken(token);
-        return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+        try {
+            String token = authService.login(req);
+            res.setToken(token);
+            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+        } catch (RuntimeException e) {
+            return ResponseEntity.ok(DataResponse.of(ResponseCode.NOT_MATCHED, res));
+        }
+
     }
 }

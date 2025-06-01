@@ -4,8 +4,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "TBL_MEMBER_INFO")
+@Table(name = "TBL_MEMBER")
 @Getter
 @Setter
 @ToString
@@ -30,8 +32,11 @@ public class Member extends BaseEntity {
     @Schema(description = "비빌번호")
     private String passwd;
 
-    @OneToOne(mappedBy = "memberInfo", cascade = CascadeType.ALL, fetch = FetchType.LAZY) //orphanRemoval = true일경우는 필수 삭제됨
-    private MemberDetail memberDetail;
+    @OneToOne(mappedBy = "memberInfo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Profile profile;
+
+    @OneToMany(mappedBy = "memberInfo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Gallery> galleryList;
 
     public Member() {
 
@@ -43,9 +48,4 @@ public class Member extends BaseEntity {
         //여기에서 초기화.
     }
 
-    // 부가정보 추가 메서드
-    public void addMemberDetail(MemberDetail detail) {
-        this.memberDetail = detail;
-        detail.setMemberInfo(this);
-    }
 }

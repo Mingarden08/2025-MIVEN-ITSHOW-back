@@ -15,5 +15,4 @@ public class MemberInfoRes {
     private String name;
     private String email;
     private LocalDateTime regTime;
-    private UserInfoDetailRes detailRes;
 }

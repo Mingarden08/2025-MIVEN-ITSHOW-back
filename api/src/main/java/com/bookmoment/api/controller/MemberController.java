@@ -22,21 +22,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/members")
 @Slf4j
 public class MemberController {
 
-    @Autowired
-    MemberService memberService;
+    private final MemberService memberService;
+
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
+    }
 
     @PostMapping("/signup")
     public ResponseEntity<DataResponse<?>> signup(@Valid @RequestBody MemberSignupRequestDto requestDto) {
-
-        //TODO: - member service 처리
         try {
-            Member member = memberService.signup(requestDto);
-            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, member));
+            boolean result = false;
+            result = memberService.signup(requestDto);
+            Map<String, Boolean> res = new HashMap<>();
+            res.put("success", result);
+            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
         } catch (IllegalStateException e) {
             return ResponseEntity.ok(DataResponse.of(ResponseCode.ALREADY_EXIST_USER_EMAIL, e.getMessage()));
         }
