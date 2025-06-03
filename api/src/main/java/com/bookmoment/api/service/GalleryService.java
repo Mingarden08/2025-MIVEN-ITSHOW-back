@@ -27,10 +27,6 @@ public class GalleryService {
 
     private final MemberRepository memberRepository;
 
-    /**
-     * 내가 작성한 갤러리 목록 조회
-     * @return
-     */
 //    public GalleryListRes findByAllMyGallery(String userId) {
 //        GalleryListRes galleryListRes = new GalleryListRes();
 //        Optional<Member> memberOptional = memberRepository.findByEmail(userId);
@@ -61,6 +57,12 @@ public class GalleryService {
 //        return galleryListRes;
 //    }
 
+    /**
+     * 내가 작성한 갤러리 목록 조회
+     * @param keyword
+     * @param userId
+     * @return
+     */
     public GalleryListRes findBySearchGallery(String keyword, String userId) {
         GalleryListRes galleryListRes = new GalleryListRes();
         // 회원정보 조회
@@ -84,7 +86,7 @@ public class GalleryService {
                         .bookId(gallery.getBookId())
                         .period(gallery.getPeriod())
                         .writer(member.getName())
-                        .quoteDate(DateUtils.getLocalDateTimeString(gallery.getDate(), DateUtils.FORMAT_DATE_UNIT_BAR))
+                        .quoteDate(DateUtils.getLocalDateTimeString(gallery.getQuoteDate(), DateUtils.FORMAT_DATE_UNIT_BAR))
                         .build();
             }).collect(Collectors.toList());
             galleryListRes.setBooks(galleryResList);
@@ -94,7 +96,8 @@ public class GalleryService {
 
     /**
      * 선택한 갤러리 상세 조회
-     * @param id
+     * @param galleryId
+     * @param userId
      * @return
      */
     public GalleryRes getGalleryDetail(Long galleryId, String userId) {

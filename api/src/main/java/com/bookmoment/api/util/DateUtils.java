@@ -25,7 +25,7 @@ public class DateUtils {
 
     public static final String FORMAT_DATE_MIN_UNIT_BAR = "yyyy-MM-dd HH:mm";
     public static final String FORMAT_DATE_TIME_UNIT_BAR = "yyyy-MM-dd HH:mm:ss";
-    public static final String FORMAT_DATE_UNIT_BAR = "yyyy-MM-dd";
+    public static final String FORMAT_DATE_UNIT_BAR = "yyyy년 MM월 dd일";
 
     public static final String FORMAT_HOUR_MINUTE_UNIT_BAR = "HH:mm";
     public static final String FORMAT_MONTH_DAY_UNIT_BAR = "MM-dd";

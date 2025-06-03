@@ -50,6 +50,8 @@ public class MemberService {
 
     /**
      * 회원가입
+     * @param dto
+     * @return
      */
     public boolean signup(MemberSignupRequestDto dto) {
         Optional<Member> memberOptional = memberRepository.findByEmail(dto.getEmail());
@@ -71,16 +73,4 @@ public class MemberService {
         return memberRepository.findByEmail(email)
                 .map(MemberProfileRequestDto::UserDto);
     }
-
-    /**
-     * 로그인
-     */
-
-    /**
-     * 회원정보 수정
-     */
-
-    /**
-     * 회원 탈퇴
-     */
 }
