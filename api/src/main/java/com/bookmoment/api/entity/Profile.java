@@ -8,7 +8,6 @@ import lombok.*;
 @Table(name = "TBL_PROFILE")
 @Getter
 @Setter
-@ToString
 @Builder
 @AllArgsConstructor
 public class Profile extends BaseEntity {
@@ -34,6 +33,7 @@ public class Profile extends BaseEntity {
     private int quoteCount;
 
     @OneToOne
+    @ToString.Exclude
     @JoinColumn(name = "member_id", referencedColumnName = "id")
     private Member memberInfo;
 

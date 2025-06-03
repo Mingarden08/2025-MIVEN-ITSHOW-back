@@ -23,7 +23,6 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .username(member.getEmail())
                 .password(member.getPasswd())       // DB에 저장된 암호화된 비밀번호 사용
                 .build();
-
     }
 }
 

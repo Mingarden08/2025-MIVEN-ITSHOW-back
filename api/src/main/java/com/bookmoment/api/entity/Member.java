@@ -10,7 +10,6 @@ import java.util.List;
 @Table(name = "TBL_MEMBER")
 @Getter
 @Setter
-@ToString
 @Builder
 @AllArgsConstructor
 public class Member extends BaseEntity {

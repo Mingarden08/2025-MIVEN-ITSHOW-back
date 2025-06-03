@@ -18,7 +18,7 @@ spring:
     generate-ddl: false
     show-sql: true
     hibernate:
-      ddl-auto: create #배포할 때는 none으로
+      ddl-auto: update #배포할 때는 none으로
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:

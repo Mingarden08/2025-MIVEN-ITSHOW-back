@@ -46,7 +46,7 @@ public class Gallery extends BaseEntity {
 
     @Column(name = "period")
     @Schema(description = "책 읽은 기간")
-    private LocalDateTime period;
+    private String period;
 
     @Column(name = "rating")
     @Schema(description = "평점")
