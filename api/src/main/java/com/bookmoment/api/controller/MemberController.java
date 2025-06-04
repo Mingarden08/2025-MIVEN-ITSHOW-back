@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.bookmoment.api.dto.req.PatchProfileReqDto;
+import com.bookmoment.api.dto.res.PatchProfileRes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -61,5 +63,10 @@ public class MemberController {
         String id = authentication.getName();
         MemberInfoRes res = memberService.findByUserId(id);
         return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+    }
+
+    @PatchMapping("/{userEmail}")
+    public ResponseEntity<DataResponse<PatchProfileRes>> updateProfile(@PathVariable('userEmail') String userEmail, @ResponseBody PatchMemberProfileReqDto dto) {
+        return this.updateProfile(userEmail, dto)
     }
 }
