@@ -8,17 +8,22 @@ import com.bookmoment.api.dto.res.PatchProfileRes;
 import com.bookmoment.api.entity.Member;
 import com.bookmoment.api.entity.Music;
 import com.bookmoment.api.repository.MemberRepository;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+
+import com.bookmoment.api.dto.res.GetProfileRes;
 
 @Service
 @Transactional
@@ -136,5 +141,24 @@ public class MemberService {
         return PatchProfileRes.builder()
                 .success(true)
                 .build();
+    }
+
+    public GetProfileRes getProfileByToken(String token) {
+        Optional<Member> memberOptional = memberRepository.findByToken(token);
+
+        if (memberOptional.isEmpty()) {
+            throw new NoSuchElementException("해당 토큰의 사용자를 찾을 수 없습니다.");
+        }
+
+        Member member = memberOptional.get();
+
+        return GetProfileRes.builder()
+            .dateTime(new Date(System.currentTimeMillis()).toLocalDate().toString()) 
+            .version("1.1.0")
+            .code(200)
+            .message("요청이 성공적으로 처리되었습니다.")
+            .success(true)
+            .data(member.getProfile())
+            .build();
     }
 }
