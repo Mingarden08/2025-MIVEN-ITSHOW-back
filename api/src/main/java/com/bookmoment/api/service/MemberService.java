@@ -2,20 +2,28 @@ package com.bookmoment.api.service;
 
 import com.bookmoment.api.dto.req.MemberProfileRequestDto;
 import com.bookmoment.api.dto.req.MemberSignupRequestDto;
+import com.bookmoment.api.dto.req.PatchProfileReqDto;
 import com.bookmoment.api.dto.res.MemberInfoRes;
+import com.bookmoment.api.dto.res.PatchProfileRes;
 import com.bookmoment.api.entity.Member;
+import com.bookmoment.api.entity.Music;
 import com.bookmoment.api.repository.MemberRepository;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+
+import com.bookmoment.api.dto.res.GetProfileRes;
 
 @Service
 @Transactional
@@ -72,5 +80,85 @@ public class MemberService {
     public Optional<MemberProfileRequestDto> profile(String email) {
         return memberRepository.findByEmail(email)
                 .map(MemberProfileRequestDto::UserDto);
+    }
+
+    public PatchProfileRes patchProfile(String email, PatchProfileReqDto dto) {
+        Optional<Member> optionalMember = memberRepository.findByEmail(email);
+
+        // 회원이 없을 경우 false 리턴
+        if (optionalMember.isEmpty()) {
+            return PatchProfileRes.builder()
+                    .success(false)
+                    .build();
+        }
+
+        // 이메일로 회원 조회
+        Member member = optionalMember.get();
+
+        // 이름이 없을 경우 false 리턴
+        if (dto.getName() == null || dto.getName().isBlank()) {
+        return PatchProfileRes.builder()
+                .success(false)
+                .build();
+
+        }
+
+        member.setName(dto.getName());
+
+        // dto에 있는 값을 확인하여 member 업데이트
+        if (dto.getProfileImage() != null) {
+            member.setProfileImage(dto.getProfileImage());
+        }
+
+        if (dto.getCoverColor() != null) {
+            member.setCoverColor(dto.getCoverColor());
+        }
+
+        if (dto.getQuoteTitle() != null) {
+            member.setQuoteTitle(dto.getQuoteTitle());
+        }
+
+        if (dto.getQuoteText() != null) {
+            member.setQuoteText(dto.getQuoteText());
+        }
+
+        // 음악 정보는 중첩 객체이므로 이중 확인
+        if (dto.getMusic() != null) {
+            MusicReqDto musicDto = dto.getMusic();
+            Music music = new Music();
+
+            if (musicDto.getId() != null) music.setId(musicDto.getId());
+            if (musicDto.getSong() != null) music.setSong(musicDto.getSong());
+            if (musicDto.getArtist() != null) music.setArtist(musicDto.getArtist());
+
+            member.setMusic(music);
+        }
+
+        // 수정된 프로필 정보 저장
+        memberRepository.save(member);
+
+        // 성공시 true 리턴
+        return PatchProfileRes.builder()
+                .success(true)
+                .build();
+    }
+
+    public GetProfileRes getProfileByToken(String token) {
+        Optional<Member> memberOptional = memberRepository.findByToken(token);
+
+        if (memberOptional.isEmpty()) {
+            throw new NoSuchElementException("해당 토큰의 사용자를 찾을 수 없습니다.");
+        }
+
+        Member member = memberOptional.get();
+
+        return GetProfileRes.builder()
+            .dateTime(new Date(System.currentTimeMillis()).toLocalDate().toString()) 
+            .version("1.1.0")
+            .code(200)
+            .message("요청이 성공적으로 처리되었습니다.")
+            .success(true)
+            .data(member.getProfile())
+            .build();
     }
 }
