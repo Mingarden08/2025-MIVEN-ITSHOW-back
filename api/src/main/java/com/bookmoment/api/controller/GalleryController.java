@@ -4,13 +4,21 @@ import com.bookmoment.api.dto.req.GalleryReqDto;
 import com.bookmoment.api.dto.res.*;
 import com.bookmoment.api.repository.GalleryRepository;
 import com.bookmoment.api.service.GalleryService;
+
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.bookmoment.api.dto.req.GetLikeReqDto;
+
 
 @RestController
 @RequestMapping("/api/gallery")
@@ -58,4 +66,11 @@ public class GalleryController {
 
         return null;
     }
+
+    @GetMapping("")
+    public GetLikeRes getMethodName(@RequestBody @Valid GetLikeReqDto dto) {
+
+        return this.galleryService.getLikeCount(dto);
+    }
+    
 }

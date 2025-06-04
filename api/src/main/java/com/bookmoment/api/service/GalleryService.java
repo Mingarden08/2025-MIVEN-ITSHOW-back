@@ -6,16 +6,22 @@ import com.bookmoment.api.entity.Gallery;
 import com.bookmoment.api.entity.Member;
 import com.bookmoment.api.repository.GalleryRepository;
 import com.bookmoment.api.repository.MemberRepository;
+import com.bookmoment.api.repository.CommentRepository;
 import com.bookmoment.api.util.DateUtils;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import com.bookmoment.api.dto.req.GetLikeReqDto;
+import com.bookmoment.api.dto.res.GetLikeRes;
 
 @Service
 @Transactional
@@ -26,6 +32,8 @@ public class GalleryService {
     private final GalleryRepository galleryRepository;
 
     private final MemberRepository memberRepository;
+
+    private final CommentRepository commentRepository;
 
 //    public GalleryListRes findByAllMyGallery(String userId) {
 //        GalleryListRes galleryListRes = new GalleryListRes();
@@ -114,5 +122,25 @@ public class GalleryService {
         return null;
     }
 
+    public GetLikeRes getLikeCount(GetLikeReqDto dto) {
+        String flag = dto.getFlag();
+
+        if (flag.equals("R")) {
+            Long reviewCount = galleryRepository.findById(Long.parseLong(dto.getReviewId()))
+                    .map(gallery -> gallery.getLikeList().stream().count())
+                    .orElse(0L);
+            return GetLikeRes.build()
+                    .success(true)
+                    .likeCount(reviewCount);
+        }
+        else if (flag.equals("C")) {
+            Long commentCount = commentRepository.findById(Long.parseLong(dto.getCommentId()))
+                    .map(comment -> comment.getLikeList().stream().count())
+                    .orElse(0L);
+            return GetLikeRes.build()
+                    .success(true)
+                    .likeCount(commentCount);
+        }
+    }
 
 }

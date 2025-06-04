@@ -32,4 +32,6 @@ public interface GalleryRepository extends JpaRepository<Gallery, Long> {
      */
     Optional<Gallery> findByIdAndMemberInfo_id(Long id, Long memberId);
 
+
+    Optional<Gallery> findById(Long id);
 }
