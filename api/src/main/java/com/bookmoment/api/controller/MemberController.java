@@ -70,13 +70,13 @@ public class MemberController {
         return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
     }
 
-    @PatchMapping("/{userEmail}")
-    public ResponseEntity<DataResponse<PatchProfileRes>> updateProfile(@PathVariable('userEmail') String userEmail, @ResponseBody PatchMemberProfileReqDto dto) {
-        return this.updateProfile(userEmail, dto)
-    }
-
-    @GetMapping()
-    public ResponseEntity<DataResponse<MemberInfoRes>> getProfile(@RequestBody GetProfileReqDto dto) {
-        return this.getProfileByToken(dto.getToken());
-    }
+//    @PatchMapping("/{userEmail}")
+//    public ResponseEntity<DataResponse<PatchProfileRes>> updateProfile(@PathVariable('userEmail') String userEmail, @ResponseBody PatchMemberProfileReqDto dto) {
+//        return this.updateProfile(userEmail, dto)
+//    }
+//
+//    @GetMapping()
+//    public ResponseEntity<DataResponse<MemberInfoRes>> getProfile(@RequestBody GetProfileReqDto dto) {
+//        return this.getProfileByToken(dto.getToken());
+//    }
 }
