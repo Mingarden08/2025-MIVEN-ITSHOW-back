@@ -45,6 +45,7 @@ public class MemberController {
 
     @PostMapping("/signup")
     public ResponseEntity<DataResponse<?>> signup(@Valid @RequestBody MemberSignupRequestDto requestDto) {
+        log.info(">>>> Signup request: {}", requestDto.toString());
         try {
             boolean result = false;
             result = memberService.signup(requestDto);
