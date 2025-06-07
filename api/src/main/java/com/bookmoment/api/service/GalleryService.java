@@ -10,7 +10,9 @@ import com.bookmoment.api.entity.Member;
 import com.bookmoment.api.repository.GalleryRepository;
 import com.bookmoment.api.repository.LikeItRepository;
 import com.bookmoment.api.repository.MemberRepository;
+import com.bookmoment.api.repository.CommentRepository;
 import com.bookmoment.api.util.DateUtils;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +26,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.bookmoment.api.dto.req.GetLikeReqDto;
+import com.bookmoment.api.dto.res.GetLikeRes;
+
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -34,6 +39,38 @@ public class GalleryService {
 
     private final MemberRepository memberRepository;
 
+    private final CommentRepository commentRepository;
+
+//    public GalleryListRes findByAllMyGallery(String userId) {
+//        GalleryListRes galleryListRes = new GalleryListRes();
+//        Optional<Member> memberOptional = memberRepository.findByEmail(userId);
+//
+//        if (memberOptional.isPresent()) {
+//            Member member = memberOptional.get();
+//            Long id = member.getId(); // member PK
+//            List<Gallery> galleryList = galleryRepository.findByMemberId(id);
+//            List<GalleryRes> galleryResList = galleryList.stream().map(gallery -> {
+//                return GalleryRes.builder()
+//                        .pages(gallery.getPages())
+//                        .like(gallery.getLikeList().stream().count())
+//                        .quote(gallery.getQuote())
+//                        .isbn(gallery.getIsbn())
+//                        .title(gallery.getTitle())
+//                        .date(DateUtils.getLocalDateTimeString(gallery.getDate(), DateUtils.FORMAT_DATE_UNIT_BAR))
+//                        .cover(gallery.getCover())
+//                        .reviewText(gallery.getReviewText())
+//                        .rating(gallery.getRating())
+//                        .bookId(gallery.getBookId())
+//                        .period(gallery.getPeriod())
+//                        .writer(member.getName())
+//                        .quoteDate(DateUtils.getLocalDateTimeString(gallery.getDate(), DateUtils.FORMAT_DATE_UNIT_BAR))
+//                        .build();
+//            }).collect(Collectors.toList());
+//            galleryListRes.setBooks(galleryResList);
+//        }
+//        return galleryListRes;
+//    }
+  
     @Autowired
     LikeItService likeItService;
 
@@ -115,6 +152,25 @@ public class GalleryService {
         }
     }
 
+    public GetLikeRes getLikeCount(GetLikeReqDto dto) {
+        String flag = dto.getFlag();
+
+        if (flag.equals("R")) {
+            Long reviewCount = galleryRepository.findById(Long.parseLong(dto.getReviewId()))
+                    .map(gallery -> gallery.getLikeList().stream().count())
+                    .orElse(0L);
+            return GetLikeRes.build()
+                    .success(true)
+                    .likeCount(reviewCount);
+        }
+        else if (flag.equals("C")) {
+            Long commentCount = commentRepository.findById(Long.parseLong(dto.getCommentId()))
+                    .map(comment -> comment.getLikeList().stream().count())
+                    .orElse(0L);
+            return GetLikeRes.build()
+                    .success(true)
+                    .likeCount(commentCount);
+        }
     /**
      * 갤러리 수정 @Transactional이 있어야 데이터 수정이 됨
      * @param userId
@@ -146,6 +202,7 @@ public class GalleryService {
             }
         }
         return result;
+
     }
 
     /**
