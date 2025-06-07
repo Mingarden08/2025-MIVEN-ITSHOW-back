@@ -34,15 +34,15 @@ public class PatchProfileReqDto {
         this.music = music;
     }
 
-    public Profile toEntity() {
-        return Profile.builder()
-                .token(this.token)
-                .profileImage(this.profileImage)
-                .name(this.name)
-                .coverColor(this.coverColor)
-                .quoteTitle(this.quoteTitle)
-                .quoteText(this.quoteText)
-                .music(this.music)
-                .build();
-    }
+//    public Profile toEntity() {
+//        return Profile.builder()
+//                .token(this.token)
+//                .profileImage(this.profileImage)
+//                .name(this.name)
+//                .coverColor(this.coverColor)
+//                .quoteTitle(this.quoteTitle)
+//                .quoteText(this.quoteText)
+//                .music(this.music)
+//                .build();
+//    }
 }

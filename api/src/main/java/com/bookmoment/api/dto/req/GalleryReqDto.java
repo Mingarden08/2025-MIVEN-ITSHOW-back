@@ -12,6 +12,4 @@ import lombok.ToString;
 @NoArgsConstructor
 public class GalleryReqDto {
     private String keyword;
-    private int currentPage;
-    private int pageSize;
 }

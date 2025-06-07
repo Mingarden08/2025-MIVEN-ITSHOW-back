@@ -13,17 +13,6 @@ public class GalleryRes {
     private Long bookId;
     private String title;
     private String cover;
-    private String isbn;
-    private String date;
-    private int pages;
-    private String period;
     private String writer;
-    private int rating;
-    private String reviewText;
-    private String quote;
-    private Long like;
-    private String quoteDate;
-
-    private CommentList comments; //댓글리스트
-    private LikeItList likeItList; //좋아료 리스트
+    private String regTime;
 }

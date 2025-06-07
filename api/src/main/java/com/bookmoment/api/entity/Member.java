@@ -31,12 +31,6 @@ public class Member extends BaseEntity {
     @Schema(description = "비빌번호")
     private String passwd;
 
-    @OneToOne(mappedBy = "memberInfo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Profile profile;
-
-    @OneToMany(mappedBy = "memberInfo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Gallery> galleryList;
-
     public Member() {
 
     }

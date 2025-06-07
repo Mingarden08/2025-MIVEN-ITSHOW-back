@@ -33,9 +33,8 @@ public class Profile extends BaseEntity {
     private int quoteCount;
 
     @OneToOne
-    @ToString.Exclude
-    @JoinColumn(name = "member_id", referencedColumnName = "id")
-    private Member memberInfo;
+    @JoinColumn(name = "member_id", referencedColumnName = "id", nullable = false, unique = true)
+    private Member member;
 
     @OneToOne(mappedBy = "profileInfo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Music music;

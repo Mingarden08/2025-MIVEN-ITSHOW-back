@@ -20,10 +20,6 @@ public class Gallery extends BaseEntity {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "bookId")
-    @Schema(description = "책 식별 아이디")
-    private Long bookId;
-
     @Column(name = "title")
     @Schema(description = "책 제목")
     private String title;
@@ -38,7 +34,7 @@ public class Gallery extends BaseEntity {
 
     @Column(name = "date")
     @Schema(description = "책 발행 일자")
-    private LocalDateTime date;
+    private LocalDateTime publicDate;
 
     @Column(name = "pages")
     @Schema(description = "책 장수")
@@ -56,24 +52,15 @@ public class Gallery extends BaseEntity {
     @Schema(description = "한 줄 소감")
     private String reviewText;
 
-    @Column(name = "quote")
+    @Column(name = "quote", columnDefinition = "TEXT")
     @Schema(description = "독후감")
     private String quote;
 
-    @Column(name = "quoteDate")
-    @Schema(description = "등록날짜")
-    private LocalDateTime quoteDate;
-
     @ManyToOne
-    //@MapsId("idMember")
-    @JoinColumn(name = "member_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_member_id"))
-    private Member memberInfo;
-
-    @OneToMany(mappedBy = "galleryInfo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<LikeIt> likeList;
-
-    @OneToMany(mappedBy = "galleryInfo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Comment> commentList;
+    @JoinColumn(name = "member_id",
+            foreignKey = @ForeignKey(name = "FK_member_id"),
+            nullable = false)
+    private Member member;
 
     public Gallery() {
 

@@ -18,7 +18,8 @@ public class DateUtils {
     public static final String FORMAT_DATE = "yyyyMMdd";
     public static final String FORMAT_TIME = "HHmm";
 
-    public static final String FORMAT_DATE_TIME_UNIT = "yyyy/MM/dd HH:mm:ss";
+    public static final String FORMAT_DATE_BAR = "yyyy-MM-dd";
+    public static final String FORMAT_DATE_TIME_UNIT = "yyyy-MM-dd HH:mm:ss";
     public static final String FORMAT_DATE_UNIT = "yyyy/MM/dd";
     public static final String FORMAT_MONTH_DATE_UNIT = "MM/dd";
     public static final String FORMAT_TIME_UNIT = "HH:mm:ss";
@@ -88,7 +89,7 @@ public class DateUtils {
     }
 
     public static String getDateTimeString(LocalDateTime date) {
-        SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_DATE_TIME);
+        SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_DATE_TIME_UNIT);
         return sdf.format(toDate(date));
     }
 

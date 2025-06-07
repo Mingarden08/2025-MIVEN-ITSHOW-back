@@ -8,7 +8,6 @@ import lombok.*;
 @Table(name = "TBL_LIKEIT")
 @Getter
 @Setter
-@ToString
 @Builder
 @AllArgsConstructor
 public class LikeIt extends BaseEntity {
@@ -21,21 +20,25 @@ public class LikeIt extends BaseEntity {
     @Schema(description = "구분자(R or C)")
     private String flag;
 
-    @Column(name = "reviewId")
-    @Schema(description = "리뷰 고유 식별자")
-    private Long reviewId;
+//    @Column(name = "reviewId")
+//    @Schema(description = "리뷰 고유 식별자")
+//    private Long reviewId;
+//
+//    @Column(name = "commentId")
+//    @Schema(description = "댓글 고유 식별자")
+//    private Long commentId;
 
-    @Column(name = "commentId")
-    @Schema(description = "댓글 고유 식별자")
-    private Long commentId;
+    @Schema(description = "누가 좋아요를 했는지")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Member likedBy;
 
-    @ManyToOne
-    @JoinColumn(name = "comment_id", referencedColumnName = "id")
-    private Comment commentInfo;
+    @Schema(description = "댓글 정보")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Comment comment;
 
-    @ManyToOne
-    @JoinColumn(name = "gallery_id", referencedColumnName = "id")
-    private Gallery galleryInfo;
+    @Schema(description = "갤러리 정보")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Gallery gallery;
 
     public LikeIt() {
 

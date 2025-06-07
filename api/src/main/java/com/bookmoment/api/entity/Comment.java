@@ -24,12 +24,15 @@ public class Comment extends BaseEntity {
     @Schema(description = "댓글 내용")
     private String text;
 
-    @OneToMany(mappedBy = "commentInfo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<LikeIt> likeList;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Gallery gallery;
 
-    @ManyToOne
-    @JoinColumn(name = "gallery_id", referencedColumnName = "id")
-    private Gallery galleryInfo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "write_id", nullable = false)
+    private Member writer;
+
+    @OneToMany(mappedBy = "comment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<LikeIt> likeList;
 
     public Comment() {}
 }
