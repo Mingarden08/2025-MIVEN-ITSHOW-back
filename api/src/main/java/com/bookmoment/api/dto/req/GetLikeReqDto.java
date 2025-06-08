@@ -8,6 +8,6 @@ import lombok.Setter;
 public class GetLikeReqDto {
     private String flag;
     private String reviewId;
-    private String commendId;
+    private String commentId;
 
 }
