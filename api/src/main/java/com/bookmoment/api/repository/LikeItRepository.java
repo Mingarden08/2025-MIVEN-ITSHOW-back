@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface LikeItRepository extends JpaRepository<LikeIt, Long> {
@@ -22,4 +23,8 @@ public interface LikeItRepository extends JpaRepository<LikeIt, Long> {
      * @return
      */
     public long countByGalleryId(Long galleryId);
+
+    Optional<LikeIt> findById(Long id);
+
+    public long countByGalleryAndFlag(Long galleryId, String flag);
 }
