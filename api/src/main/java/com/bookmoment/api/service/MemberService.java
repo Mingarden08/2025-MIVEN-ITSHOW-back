@@ -33,10 +33,6 @@ public class MemberService {
     //add to repository static variables;
     private final MemberRepository memberRepository;
 
-    private final GalleryService galleryService;
-
-    private final ProfileService profileService;
-
     private final PasswordEncoder passwordEncoder;
 
     /**
@@ -80,6 +76,15 @@ public class MemberService {
     public Optional<MemberProfileRequestDto> profile(String email) {
         return memberRepository.findByEmail(email)
                 .map(MemberProfileRequestDto::UserDto);
+    }
+
+    /**
+     * 회원아이디(이메일)로 Member Entity 리턴
+     * @param email
+     * @return
+     */
+    public Member getMemberByEmail(String email) {
+        return memberRepository.findByEmail(email).orElseThrow();
     }
 
 //    public PatchProfileRes patchProfile(String email, PatchProfileReqDto dto) {

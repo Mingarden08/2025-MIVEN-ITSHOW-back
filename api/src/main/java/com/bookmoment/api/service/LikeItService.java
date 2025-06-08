@@ -29,6 +29,4 @@ public class LikeItService {
         long count = likeItRepository.countByGalleryId(galleryId);
         return (int)count;
     }
-
-
 }

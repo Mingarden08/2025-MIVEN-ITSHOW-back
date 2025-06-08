@@ -2,8 +2,14 @@
 <configuration scan="true" scanPeriod="60 seconds"><!--// 설정변경을 새로 읽어 들이는 속성 추가 //-->
     <!-- log property 설정 파일 -->
     <springProfile name="dev">
-        <property resource="logback.properties"/>
+        <property resource="logback-dev.properties"/>
     </springProfile>
+
+    <springProfile name="local">
+        <property resource="logback-local.properties"/>
+    </springProfile>
+
+
 
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
     <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>

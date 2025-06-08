@@ -1,48 +1,40 @@
 package com.bookmoment.api.dto.req;
 
+import com.bookmoment.api.entity.Member;
 import com.bookmoment.api.entity.Profile;
-import com.bookmoment.api.entity.Music;
-
-import jakarta.validation.constraints.NotBlank;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 @Getter
 @Setter
 @ToString
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PatchProfileReqDto {
-    @NotBlank(message = "토큰은 필수 입력 값입니다.")
-    private String token;
 
-    private String profileImage;
     private String name;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private String profileImage;
     private String coverColor;
-    private String quoteTitle;
-    private String quoteText;
-    private Music music;
+    private MusicReqDto music;
+    private QuoteReqDto quote;
 
-    public PatchProfileReqDto(String token, String profileImage, String name, String coverColor, String quoteTitle, String quoteText, Music music) {
-        this.token = token;
-        this.profileImage = profileImage;
-        this.name = name;
-        this.coverColor = coverColor;
-        this.quoteTitle = quoteTitle;
-        this.quoteText = quoteText;
-        this.music = music;
+    /**
+     * Profile Create
+     * @param member
+     * @return
+     */
+    public Profile toEntity(Member member) {
+        return Profile.builder()
+                .img(this.profileImage)
+                .coverColor(this.coverColor)
+                .music(this.music.toEntity())
+                .quote(this.quote.toEntity())
+                .member(member)
+                .name(this.name)
+                .quoteCount(0)
+                .build();
     }
-
-//    public Profile toEntity() {
-//        return Profile.builder()
-//                .token(this.token)
-//                .profileImage(this.profileImage)
-//                .name(this.name)
-//                .coverColor(this.coverColor)
-//                .quoteTitle(this.quoteTitle)
-//                .quoteText(this.quoteText)
-//                .music(this.music)
-//                .build();
-//    }
 }

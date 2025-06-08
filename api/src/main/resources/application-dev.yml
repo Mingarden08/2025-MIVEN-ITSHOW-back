@@ -37,8 +37,17 @@ spring:
     contentnegotiation:
       favor-parameter: true
       favor-path-extension: false
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 15MB
 server:
   port: 8080
+  max-http-request-header-size: 40000
+pkg:
+  imgLocation: /home/ubuntu/project/fileUpload #D:/Programming/bookmoment/fileUpload
+  uploadPath: file:///home/ubuntu/project/fileUpload
 logging:
   level:
     org:

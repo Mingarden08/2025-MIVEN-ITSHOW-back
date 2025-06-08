@@ -51,6 +51,7 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/api/members/signup",
                                 "/swagger-ui/**",
+                                "/images/**",
                                 "/swagger-ui.html",             // 혹시 사용하는 경우 대비
                                 "/v3/api-docs/**",
                                 "/swagger-resources/**",

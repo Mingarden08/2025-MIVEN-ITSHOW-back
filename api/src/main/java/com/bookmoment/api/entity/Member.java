@@ -41,4 +41,11 @@ public class Member extends BaseEntity {
         //여기에서 초기화.
     }
 
+
+    //updateEntity from Dto  or from String(이름...)
+
+    public void updateEntity(String name) {
+        this.setName(name);
+    }
+
 }

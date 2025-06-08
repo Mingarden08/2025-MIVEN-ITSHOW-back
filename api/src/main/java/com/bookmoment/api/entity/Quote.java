@@ -1,5 +1,6 @@
 package com.bookmoment.api.entity;
 
+import com.bookmoment.api.dto.req.QuoteReqDto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
@@ -26,10 +27,20 @@ public class Quote extends BaseEntity {
     private String text;
 
     @OneToOne
-    @JoinColumn(name = "profile_id", referencedColumnName = "id")
+    @JoinColumn(name = "profile_id", referencedColumnName = "id", unique = true, nullable = false)
     private Profile profileInfo;
 
     public Quote() {
 
     }
+
+    /**
+     * Entity Update
+     * @param quote
+     */
+    public void updateFrom(QuoteReqDto quote) {
+        this.title = quote.getTitle();
+        this.text = quote.getText();
+    }
+
 }

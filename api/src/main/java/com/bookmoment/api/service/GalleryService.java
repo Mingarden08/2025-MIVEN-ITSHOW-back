@@ -159,4 +159,13 @@ public class GalleryService {
         Gallery gallery = galleryRepository.findById(galleryId).orElseThrow();
         return commentService.commentRegister(userId, gallery, reqDto);
     }
+
+    /**
+     * 내가 작성한 겔러리 수 구하기
+     * @param member
+     * @return
+     */
+    public Long getMyGalleryCount(Member member) {
+        return galleryRepository.countByMemberId(member.getId());
+    }
 }

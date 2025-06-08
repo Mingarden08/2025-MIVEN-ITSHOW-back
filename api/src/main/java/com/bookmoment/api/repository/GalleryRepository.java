@@ -25,6 +25,13 @@ public interface GalleryRepository extends JpaRepository<Gallery, Long> {
     List<Gallery> findByTitleContainingOrderByIdDesc(String keyword);
 
     /**
+     * 내가 작성한 겔러리 목록 카운드
+     * @param memberId
+     * @return
+     */
+    Long countByMemberId(Long memberId);
+
+    /**
      * 내가 작성한 갤러리 목록 조회
      * @param memberId
      * @return

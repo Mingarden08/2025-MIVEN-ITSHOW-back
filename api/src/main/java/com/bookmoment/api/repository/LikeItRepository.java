@@ -21,5 +21,5 @@ public interface LikeItRepository extends JpaRepository<LikeIt, Long> {
      * @param galleryId
      * @return
      */
-    public long countByGalleryId(Long galleryId);
+    long countByGalleryId(Long galleryId);
 }
