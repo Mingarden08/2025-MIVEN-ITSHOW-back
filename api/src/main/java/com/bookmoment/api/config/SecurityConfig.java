@@ -2,22 +2,22 @@ package com.bookmoment.api.config;
 
 import com.bookmoment.api.filter.JwtFilter;
 import com.bookmoment.api.util.JwtUtil;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 @Configuration
 @EnableWebSecurity
@@ -28,6 +28,7 @@ public class SecurityConfig {
     private final JwtUtil jwtUtil;
 
     private final CustomUserDetailsService userDetailsService;
+
 
     public SecurityConfig(JwtUtil jwtUtil, CustomUserDetailsService userDetailsService) {
         this.jwtUtil = jwtUtil;
@@ -72,4 +73,28 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOriginPatterns(Arrays.asList("*",
+                "http://3.38.185.232:8081",
+                "http://localhost:80"));
+        //configuration.addAllowedHeader("*");
+        //configuration.setAllowedMethods(Arrays.asList("*"));
+        configuration.setAllowedOriginPatterns(Collections.singletonList("*")); // 모든 도메인 허용
+        configuration.setAllowedMethods(Collections.singletonList("*")); // 모든 HTTP 메서드 허용
+        configuration.setAllowedHeaders(Collections.singletonList("*")); // 모든 헤더 허용
+
+        configuration.setAllowCredentials(false);
+        configuration.setMaxAge(3600L);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/v1/**", configuration);
+        source.registerCorsConfiguration("/v2/**", configuration);
+        source.registerCorsConfiguration("/admin/**", configuration);
+        source.registerCorsConfiguration("/gateway/**", configuration);
+        source.registerCorsConfiguration("/thru/**", configuration);
+        source.registerCorsConfiguration("/enoma/**", configuration);
+        return source;
+    }
 }
