@@ -125,10 +125,9 @@ public class GalleryController {
         return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
     }
 
-    @GetMapping("")
-    public GetLikeRes getMethodName(@RequestBody @Valid GetLikeReqDto dto) {
-
-        return this.galleryService.getLikeCount(dto);
+    @GetMapping("/{gNo}")
+    public GetLikeRes getMethodName(@PathVariable("gNo") Long galleryId, @RequestBody @Valid GetLikeReqDto dto) {
+        return this.galleryService.getLikeCount(galleryId, dto);
     }
     
 }
