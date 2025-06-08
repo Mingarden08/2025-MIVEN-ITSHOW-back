@@ -71,7 +71,7 @@ public class GalleryService {
                     .bookId(gallery.getId())
                     .title(gallery.getTitle())
                     .cover(gallery.getCover())
-                    .writer(member.getName())
+                    .writer(gallery.getMember().getName())
                     .regTime(regTime)
                     .build();
         }).collect(Collectors.toList());
@@ -101,7 +101,7 @@ public class GalleryService {
                     .publicDate(publicDate)
                     .pages(gallery.getPages())
                     .period(gallery.getPeriod())
-                    .writer(member.getName())
+                    .writer(gallery.getMember().getName())
                     .rating(gallery.getRating())
                     .reviewText(gallery.getReviewText())
                     .quote(gallery.getQuote())
