@@ -1,4 +1,9 @@
 spring:
   profiles:
+<<<<<<< HEAD
     #active : local
     active : dev
+=======
+    active : local
+    #active : dev
+>>>>>>> develop

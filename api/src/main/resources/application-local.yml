@@ -37,6 +37,7 @@ spring:
     contentnegotiation:
       favor-parameter: true
       favor-path-extension: false
+<<<<<<< HEAD
   servlet:
     multipart:
       enabled: true
@@ -48,6 +49,10 @@ server:
 pkg:
   imgLocation: D:/Programming/bookmoment/fileUpload
   uploadPath: file:///D:/Programming/bookmoment/fileUpload/
+=======
+server:
+  port: 8080
+>>>>>>> develop
 logging:
   level:
     org:
