@@ -3,6 +3,12 @@
     <!-- log property 설정 파일 -->
     <springProfile name="dev">
         <property resource="logback-dev.properties"/>
+<<<<<<< HEAD
+=======
+    </springProfile>
+    <springProfile name="local">
+        <property resource="logback-local.properties"/>
+>>>>>>> master
     </springProfile>
 
     <springProfile name="local">

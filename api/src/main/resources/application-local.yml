@@ -18,7 +18,11 @@ spring:
     generate-ddl: false
     show-sql: true
     hibernate:
+<<<<<<< HEAD
       ddl-auto: none #배포할 때는 none으로
+=======
+      ddl-auto: update #배포할 때는 none으로
+>>>>>>> master
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
@@ -38,6 +42,7 @@ spring:
       favor-parameter: true
       favor-path-extension: false
 <<<<<<< HEAD
+<<<<<<< HEAD
   servlet:
     multipart:
       enabled: true
@@ -53,6 +58,10 @@ pkg:
 server:
   port: 8080
 >>>>>>> develop
+=======
+server:
+  port: 8080
+>>>>>>> master
 logging:
   level:
     org:

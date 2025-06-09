@@ -5,12 +5,15 @@ import com.bookmoment.api.dto.req.GalleryRegReqDto;
 import com.bookmoment.api.dto.res.GalleryDetailRes;
 import com.bookmoment.api.dto.res.GalleryListRes;
 import com.bookmoment.api.dto.res.GalleryRes;
+import com.bookmoment.api.entity.LikeIt;
 import com.bookmoment.api.entity.Gallery;
 import com.bookmoment.api.entity.Member;
 import com.bookmoment.api.repository.GalleryRepository;
 import com.bookmoment.api.repository.LikeItRepository;
 import com.bookmoment.api.repository.MemberRepository;
+import com.bookmoment.api.repository.CommentRepository;
 import com.bookmoment.api.util.DateUtils;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +27,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.bookmoment.api.dto.req.GetLikeReqDto;
+import com.bookmoment.api.dto.res.GetLikeRes;
+
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -34,6 +40,38 @@ public class GalleryService {
 
     private final MemberRepository memberRepository;
 
+    private final CommentRepository commentRepository;
+
+//    public GalleryListRes findByAllMyGallery(String userId) {
+//        GalleryListRes galleryListRes = new GalleryListRes();
+//        Optional<Member> memberOptional = memberRepository.findByEmail(userId);
+//
+//        if (memberOptional.isPresent()) {
+//            Member member = memberOptional.get();
+//            Long id = member.getId(); // member PK
+//            List<Gallery> galleryList = galleryRepository.findByMemberId(id);
+//            List<GalleryRes> galleryResList = galleryList.stream().map(gallery -> {
+//                return GalleryRes.builder()
+//                        .pages(gallery.getPages())
+//                        .like(gallery.getLikeList().stream().count())
+//                        .quote(gallery.getQuote())
+//                        .isbn(gallery.getIsbn())
+//                        .title(gallery.getTitle())
+//                        .date(DateUtils.getLocalDateTimeString(gallery.getDate(), DateUtils.FORMAT_DATE_UNIT_BAR))
+//                        .cover(gallery.getCover())
+//                        .reviewText(gallery.getReviewText())
+//                        .rating(gallery.getRating())
+//                        .bookId(gallery.getBookId())
+//                        .period(gallery.getPeriod())
+//                        .writer(member.getName())
+//                        .quoteDate(DateUtils.getLocalDateTimeString(gallery.getDate(), DateUtils.FORMAT_DATE_UNIT_BAR))
+//                        .build();
+//            }).collect(Collectors.toList());
+//            galleryListRes.setBooks(galleryResList);
+//        }
+//        return galleryListRes;
+//    }
+  
     @Autowired
     LikeItService likeItService;
 
@@ -115,6 +153,65 @@ public class GalleryService {
         }
     }
 
+    public GetLikeRes getLikeCount(Long galleryId, GetLikeReqDto dto) {
+        String flag = dto.getFlag();
+        String userId = dto.getUserId();
+
+        Gallery gallery = galleryRepository.findById(galleryId)
+            .orElseThrow(() -> new IllegalArgumentException("Gallery not found"));
+
+        Member member = memberRepository.findById(Long.parseLong(userId))
+            .orElseThrow(() -> new IllegalArgumentException("User not found"));
+
+        long likeCount;
+
+        if ("R".equals(flag)) {
+            Optional<LikeIt> existingLike = likeItRepository.findByLikedByAndGallery(member, gallery);
+
+            if (existingLike.isPresent()) {
+                likeItRepository.delete(existingLike.get());
+            } else {
+                LikeIt newLike = LikeIt.builder()
+                    .flag("R")
+                    .likedBy(member)
+                    .gallery(gallery)
+                    .build();
+                likeItRepository.save(newLike);
+            }
+
+            likeCount = likeItRepository.countByGalleryAndFlag(gallery, "R");
+        }
+
+        else if ("C".equals(flag)) {
+            Long commentId = Long.parseLong(dto.getCommentId());
+
+            Comment comment = commentRepository.findById(commentId)
+                .orElseThrow(() -> new IllegalArgumentException("Comment not found"));
+
+            Optional<LikeIt> existingLike = likeItRepository.findByLikedByAndComment(member, comment);
+
+            if (existingLike.isPresent()) {
+                likeItRepository.delete(existingLike.get());
+            } else {
+                LikeIt newLike = LikeIt.builder()
+                    .flag("C")
+                    .likedBy(member)
+                    .comment(comment)
+                    .gallery(gallery)
+                    .build();
+                likeItRepository.save(newLike);
+            }
+
+            likeCount = likeItRepository.countByComment(comment);
+        } else {
+            throw new IllegalArgumentException("Invalid flag: " + flag);
+        }
+
+        return GetLikeRes.build()
+            .success(true)
+            .likeCount(likeCount);
+    }
+
     /**
      * 갤러리 수정 @Transactional이 있어야 데이터 수정이 됨
      * @param userId
@@ -146,6 +243,7 @@ public class GalleryService {
             }
         }
         return result;
+
     }
 
     /**
