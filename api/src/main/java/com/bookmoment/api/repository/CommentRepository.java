@@ -1,6 +1,7 @@
 package com.bookmoment.api.repository;
 
 import com.bookmoment.api.entity.Comment;
+import com.bookmoment.api.entity.Gallery;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,4 +15,7 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
      * @return
      */
     List<Comment> findByGalleryIdOrderByIdDesc(Long galleryId);
+
+    Comment findByIdAndWriter_Id(Long id, Long memberId);
+
 }

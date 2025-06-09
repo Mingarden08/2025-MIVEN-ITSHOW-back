@@ -71,7 +71,7 @@ public class GalleryService {
                     .bookId(gallery.getId())
                     .title(gallery.getTitle())
                     .cover(gallery.getCover())
-                    .writer(member.getName())
+                    .writer(gallery.getMember().getName())
                     .regTime(regTime)
                     .build();
         }).collect(Collectors.toList());
@@ -101,7 +101,7 @@ public class GalleryService {
                     .publicDate(publicDate)
                     .pages(gallery.getPages())
                     .period(gallery.getPeriod())
-                    .writer(member.getName())
+                    .writer(gallery.getMember().getName())
                     .rating(gallery.getRating())
                     .reviewText(gallery.getReviewText())
                     .quote(gallery.getQuote())
@@ -167,5 +167,23 @@ public class GalleryService {
      */
     public Long getMyGalleryCount(Member member) {
         return galleryRepository.countByMemberId(member.getId());
+    }
+
+    public GalleryListRes myGalleryList(String userId) {
+        Member member = memberRepository.findByEmail(userId).orElseThrow();
+        GalleryListRes res = new GalleryListRes();
+        List<Gallery> galleryList = galleryRepository.findByMemberId(member.getId());
+        List<GalleryRes> galleryResList = galleryList.stream().map(gallery -> {
+            String regTime = DateUtils.getDateTimeString(gallery.getRegTime());
+            return GalleryRes.builder()
+                    .bookId(gallery.getId())
+                    .title(gallery.getTitle())
+                    .cover(gallery.getCover())
+                    .writer(member.getName())
+                    .regTime(regTime)
+                    .build();
+        }).collect(Collectors.toList());
+        res.setBooks(galleryResList);
+        return res;
     }
 }
