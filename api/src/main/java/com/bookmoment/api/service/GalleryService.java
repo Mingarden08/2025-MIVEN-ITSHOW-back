@@ -153,65 +153,6 @@ public class GalleryService {
         }
     }
 
-    public GetLikeRes getLikeCount(Long galleryId, GetLikeReqDto dto) {
-        String flag = dto.getFlag();
-        String userId = dto.getUserId();
-
-        Gallery gallery = galleryRepository.findById(galleryId)
-            .orElseThrow(() -> new IllegalArgumentException("Gallery not found"));
-
-        Member member = memberRepository.findById(Long.parseLong(userId))
-            .orElseThrow(() -> new IllegalArgumentException("User not found"));
-
-        long likeCount;
-
-        if ("R".equals(flag)) {
-            Optional<LikeIt> existingLike = likeItRepository.findByLikedByAndGallery(member, gallery);
-
-            if (existingLike.isPresent()) {
-                likeItRepository.delete(existingLike.get());
-            } else {
-                LikeIt newLike = LikeIt.builder()
-                    .flag("R")
-                    .likedBy(member)
-                    .gallery(gallery)
-                    .build();
-                likeItRepository.save(newLike);
-            }
-
-            likeCount = likeItRepository.countByGalleryAndFlag(gallery, "R");
-        }
-
-        else if ("C".equals(flag)) {
-            Long commentId = Long.parseLong(dto.getCommentId());
-
-            Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(() -> new IllegalArgumentException("Comment not found"));
-
-            Optional<LikeIt> existingLike = likeItRepository.findByLikedByAndComment(member, comment);
-
-            if (existingLike.isPresent()) {
-                likeItRepository.delete(existingLike.get());
-            } else {
-                LikeIt newLike = LikeIt.builder()
-                    .flag("C")
-                    .likedBy(member)
-                    .comment(comment)
-                    .gallery(gallery)
-                    .build();
-                likeItRepository.save(newLike);
-            }
-
-            likeCount = likeItRepository.countByComment(comment);
-        } else {
-            throw new IllegalArgumentException("Invalid flag: " + flag);
-        }
-
-        return GetLikeRes.build()
-            .success(true)
-            .likeCount(likeCount);
-    }
-
     /**
      * 갤러리 수정 @Transactional이 있어야 데이터 수정이 됨
      * @param userId

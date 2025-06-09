@@ -35,12 +35,15 @@ public class FileService {
         //TODO: - 프로필 확장자 체크 필요 (jpg, jpeg, png만 허용)
 
         log.debug("** fileUpload originalFileName = {} **", file.getOriginalFilename());
-
-        String originalFileName = file.getOriginalFilename();
-        String fileName = this.getNewFileName(FileUtils.extension(file.getContentType()));
-        String url = this.uploadLocal(fileName, file);
-        log.info(">>>>  fileUpload fileurl {}**", url);
-        return url;
+        if (fileExt.equals(".jpg") || fileExt.equals(".jpeg") || fileExt.equals(".png")) {
+            String originalFileName = file.getOriginalFilename();
+            String fileName = this.getNewFileName(FileUtils.extension(file.getContentType()));
+            String url = this.uploadLocal(fileName, file);
+            log.info(">>>>  fileUpload fileurl {}**", url);
+            return url;
+        } else {
+            return null;
+        }
     }
 
 
@@ -70,7 +73,7 @@ public class FileService {
         }
 
         // File.separator 사용하면 안된다. url 전용 "/" 사용
-        String uploadedURLPath = "http://localhost:8080/images/" + datePath + "/" + filename;
+        String uploadedURLPath = "http://3.38.185.232:8080/images/" + datePath + "/" + filename;
         return uploadedURLPath;
     }
 
@@ -81,6 +84,6 @@ public class FileService {
         String formatTime = LocalDateTime.now().format(dateTimeFormatter);
 
         log.info("** fileUpload fileName = {} **", "JO" + "_" + randomStr + "_" + formatTime + "_" + fileExt);
-        return "JO" + "_" + randomStr + "_" + formatTime + "_" + fileExt; // ozal_(random)_20220101_094530_jpg
+        return "Miven" + "_" + randomStr + "_" + formatTime + "_" + fileExt; // Miven_(random)_20220101_094530_jpg
     }
 }

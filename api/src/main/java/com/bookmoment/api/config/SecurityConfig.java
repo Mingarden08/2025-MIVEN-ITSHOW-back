@@ -52,6 +52,7 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/api/members/signup",
                                 "/swagger-ui/**",
+                                "http://3.38.185.232:8080/images/**",
                                 "/images/**",
                                 "/swagger-ui.html",             // 혹시 사용하는 경우 대비
                                 "/v3/api-docs/**",
@@ -77,6 +78,7 @@ public class SecurityConfig {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOriginPatterns(Arrays.asList("*",
+                "http://3.38.185.232:8080",
                 "http://3.38.185.232:8081",
                 "http://localhost:80"));
         //configuration.addAllowedHeader("*");

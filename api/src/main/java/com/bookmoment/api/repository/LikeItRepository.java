@@ -23,7 +23,6 @@ public interface LikeItRepository extends JpaRepository<LikeIt, Long> {
      * @param galleryId
      * @return
      */
-<<<<<<< HEAD
     long countByGalleryId(Long galleryId);
 
     long countByCommentId(Long commentId);
@@ -38,11 +37,5 @@ public interface LikeItRepository extends JpaRepository<LikeIt, Long> {
     Optional<LikeIt> findByLikedBy_IdAndGallery_Id(Long memberId, Long galleryId);
 
     Optional<LikeIt> findByLikedBy_IdAndComment_Id(Long memberId, Long commentId);
-=======
-    public long countByGalleryId(Long galleryId);
 
-    Optional<LikeIt> findById(Long id);
-
-    public long countByGalleryAndFlag(Long galleryId, String flag);
->>>>>>> master
 }

@@ -8,11 +8,7 @@ import com.bookmoment.api.dto.res.*;
 import com.bookmoment.api.repository.GalleryRepository;
 import com.bookmoment.api.service.CommentService;
 import com.bookmoment.api.service.GalleryService;
-<<<<<<< HEAD
 import com.bookmoment.api.service.LikeItService;
-=======
-
->>>>>>> master
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -126,7 +122,7 @@ public class GalleryController {
         return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
     }
 
-<<<<<<< HEAD
+
     @PostMapping("/like")
     public ResponseEntity<DataResponse<?>> LikeList(@Parameter(hidden = true) Authentication authentication,
                                                     HttpServletRequest request,
@@ -154,11 +150,5 @@ public class GalleryController {
         GalleryListRes res = galleryService.myGalleryList(id);
         return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
     }
-=======
-    @GetMapping("/{gNo}")
-    public GetLikeRes getMethodName(@PathVariable("gNo") Long galleryId, @RequestBody @Valid GetLikeReqDto dto) {
-        return this.galleryService.getLikeCount(galleryId, dto);
-    }
-    
->>>>>>> master
+
 }

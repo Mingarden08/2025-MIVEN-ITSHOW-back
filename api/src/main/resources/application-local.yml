@@ -18,11 +18,7 @@ spring:
     generate-ddl: false
     show-sql: true
     hibernate:
-<<<<<<< HEAD
       ddl-auto: none #배포할 때는 none으로
-=======
-      ddl-auto: update #배포할 때는 none으로
->>>>>>> master
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
@@ -41,8 +37,6 @@ spring:
     contentnegotiation:
       favor-parameter: true
       favor-path-extension: false
-<<<<<<< HEAD
-<<<<<<< HEAD
   servlet:
     multipart:
       enabled: true
@@ -54,14 +48,6 @@ server:
 pkg:
   imgLocation: D:/Programming/bookmoment/fileUpload
   uploadPath: file:///D:/Programming/bookmoment/fileUpload/
-=======
-server:
-  port: 8080
->>>>>>> develop
-=======
-server:
-  port: 8080
->>>>>>> master
 logging:
   level:
     org:

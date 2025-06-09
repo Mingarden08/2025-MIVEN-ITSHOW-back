@@ -66,27 +66,4 @@ public class MemberController {
         return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
     }
 
-   @PatchMapping("")
-   public ResponseEntity<DataResponse<PatchProfileRes>> updateProfile(@Parameter(hidden = true) Authentication authentication, @ResponseBody PatchMemberProfileReqDto dto) {
-        if(authentication == null) {
-            throw new IllegalStateException("Authentication object is null");
-        }
-
-        String userEmail = authentication.getEmail();
-        if (userEmail == null || userEmail.isEmpty()) {
-            throw new IllegalStateException("User email is not available in authentication object");
-        }
-       
-        return this.updateProfile(userEmail, dto);
-   }
-
-   @GetMapping()
-   public ResponseEntity<DataResponse<MemberInfoRes>> getProfile(@Parameter(hidden = true) Authentication authentication) {
-        if(authentication == null) {
-            throw new IllegalStateException("Authentication object is null");
-        }
-        String userEmail = authentication.getEmail();
-
-        return this.getProfileByEmail(getEmail);
-   }
 }
