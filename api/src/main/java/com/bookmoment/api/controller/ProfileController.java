@@ -77,7 +77,7 @@ public class ProfileController {
         String id = authentication.getName();
 
         boolean result = profileService.patchProfile(id, reqDto);
-        
+
         Map<String, Boolean> res = new HashMap<>();
         if (result) { // 프로필 수정 성공   
             res.put("success", result);
@@ -100,6 +100,11 @@ public class ProfileController {
 
         // 서비스 호출
         ProfileRes res = profileService.getProfile(id);
-        return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+        
+        if (!(res.getProfileImg() == null) && !(res.getCoverColor() == null) || !(res.getQuote() == null) || !(res.getMusic() == null)) {
+            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+        } else {
+            return ResponseEntity.badRequest().body(DataResponse.of(ResponseCode.NOT_FOUND_USER, res));
+        }
     }
 }
