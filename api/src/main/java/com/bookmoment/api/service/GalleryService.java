@@ -149,7 +149,7 @@ public class GalleryService {
                     .build();
             return res;
         } else {
-            return null;
+            throw new NullPointerException("존재하지 않는 게시물입니다");
         }
     }
 
@@ -163,12 +163,11 @@ public class GalleryService {
     public boolean galleryUpdate(String userId, Long galleryId, GalleryRegReqDto reqDto) {
         Optional<Gallery> galleryOptional = galleryRepository.findById(galleryId);
         Member member = memberRepository.findByEmail(userId).orElseThrow();
-        boolean result = false;
         if (galleryOptional.isPresent()) {
             Gallery gallery = galleryOptional.get();
 
             //갤러리 작성자 아이디가 현재 로그인 한 아이디와 같을 때만 수정 가능
-            //영송석으로 save()가 필요 없음
+            //영속석으로 save()가 필요 없음
             if (gallery.getMember().getId().equals(member.getId())) {
                 LocalDate publicDate = DateUtils.toLocalDate(reqDto.getPublicDate(), DateUtils.FORMAT_DATE_BAR);
                 gallery.setTitle(reqDto.getTitle());
@@ -180,11 +179,10 @@ public class GalleryService {
                 gallery.setReviewText(reqDto.getReview());
                 gallery.setQuote(reqDto.getQuote());
                 gallery.setPages(reqDto.getPages());
-                result = true;
+                return true;
             }
         }
-        return result;
-
+        return false;
     }
 
     /**

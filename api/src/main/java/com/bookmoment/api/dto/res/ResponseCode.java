@@ -33,6 +33,7 @@ public enum ResponseCode {
 
     /* Not Found */
     NOT_FOUND_USER(4041, "유저를 찾을 수 없습니다."),
+    NOT_FOUND_GALLERY(4041, "존재하지 않는 게시물입니다"),
     NOT_FOUND_COUNTRY_CODE(4041, "국가 코드가 존재하지 않습니다."),
     NOT_FOUND_CITY(4041, "도시가 존재하지 않습니다."),
     NOT_FOUND_REASON_OF_JOIN(4041, "가입 사유가 존재하지 않습니다."),
