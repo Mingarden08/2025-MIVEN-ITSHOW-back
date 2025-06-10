@@ -9,17 +9,23 @@ import com.bookmoment.api.entity.Music;
 import com.bookmoment.api.entity.Profile;
 import com.bookmoment.api.entity.Quote;
 import com.bookmoment.api.repository.ProfileRepository;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.Optional;
+
+import jakarta.validation.Valid;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
 @Slf4j
+@Validated
 public class ProfileService {
 
     private final ProfileRepository profileRepository;
@@ -34,7 +40,7 @@ public class ProfileService {
      * @param reqDto
      * @return
      */
-    public boolean patchProfile(String userId, PatchProfileReqDto reqDto) {
+    public boolean patchProfile(String userId, @Valid PatchProfileReqDto reqDto) {
         Member member = memberService.getMemberByEmail(userId);
 
         Optional<Profile> profileOptional = profileRepository.findByMemberId(member.getId());
@@ -145,6 +151,7 @@ public class ProfileService {
             profile.setQuoteCount(quoteCount);
             profileRepository.save(profile);
         }
+        
         return result;
     }
 }

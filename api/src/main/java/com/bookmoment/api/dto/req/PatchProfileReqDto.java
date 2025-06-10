@@ -3,6 +3,8 @@ package com.bookmoment.api.dto.req;
 import com.bookmoment.api.entity.Member;
 import com.bookmoment.api.entity.Profile;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Getter
@@ -13,6 +15,7 @@ import lombok.*;
 @AllArgsConstructor
 public class PatchProfileReqDto {
 
+    @NotBlank(message = "이름은 필수 입력값입니다.")   
     private String name;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
