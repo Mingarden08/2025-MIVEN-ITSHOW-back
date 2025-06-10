@@ -151,6 +151,7 @@ public class ProfileService {
             profile.setQuoteCount(quoteCount);
             profileRepository.save(profile);
         }
+        
         return result;
     }
 }
