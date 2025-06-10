@@ -109,7 +109,7 @@ public class GalleryService {
                     .bookId(gallery.getId())
                     .title(gallery.getTitle())
                     .cover(gallery.getCover())
-                    .writer(member.getName())
+                    .writer(gallery.getMember().getName())
                     .regTime(regTime)
                     .build();
         }).collect(Collectors.toList());
@@ -139,7 +139,7 @@ public class GalleryService {
                     .publicDate(publicDate)
                     .pages(gallery.getPages())
                     .period(gallery.getPeriod())
-                    .writer(member.getName())
+                    .writer(gallery.getMember().getName())
                     .rating(gallery.getRating())
                     .reviewText(gallery.getReviewText())
                     .quote(gallery.getQuote())
@@ -151,65 +151,6 @@ public class GalleryService {
         } else {
             return null;
         }
-    }
-
-    public GetLikeRes getLikeCount(Long galleryId, GetLikeReqDto dto) {
-        String flag = dto.getFlag();
-        String userId = dto.getUserId();
-
-        Gallery gallery = galleryRepository.findById(galleryId)
-            .orElseThrow(() -> new IllegalArgumentException("Gallery not found"));
-
-        Member member = memberRepository.findById(Long.parseLong(userId))
-            .orElseThrow(() -> new IllegalArgumentException("User not found"));
-
-        long likeCount;
-
-        if ("R".equals(flag)) {
-            Optional<LikeIt> existingLike = likeItRepository.findByLikedByAndGallery(member, gallery);
-
-            if (existingLike.isPresent()) {
-                likeItRepository.delete(existingLike.get());
-            } else {
-                LikeIt newLike = LikeIt.builder()
-                    .flag("R")
-                    .likedBy(member)
-                    .gallery(gallery)
-                    .build();
-                likeItRepository.save(newLike);
-            }
-
-            likeCount = likeItRepository.countByGalleryAndFlag(gallery, "R");
-        }
-
-        else if ("C".equals(flag)) {
-            Long commentId = Long.parseLong(dto.getCommentId());
-
-            Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(() -> new IllegalArgumentException("Comment not found"));
-
-            Optional<LikeIt> existingLike = likeItRepository.findByLikedByAndComment(member, comment);
-
-            if (existingLike.isPresent()) {
-                likeItRepository.delete(existingLike.get());
-            } else {
-                LikeIt newLike = LikeIt.builder()
-                    .flag("C")
-                    .likedBy(member)
-                    .comment(comment)
-                    .gallery(gallery)
-                    .build();
-                likeItRepository.save(newLike);
-            }
-
-            likeCount = likeItRepository.countByComment(comment);
-        } else {
-            throw new IllegalArgumentException("Invalid flag: " + flag);
-        }
-
-        return GetLikeRes.build()
-            .success(true)
-            .likeCount(likeCount);
     }
 
     /**
@@ -256,5 +197,32 @@ public class GalleryService {
     public boolean commentRegister(String userId, Long galleryId, CommentReqDto reqDto) {
         Gallery gallery = galleryRepository.findById(galleryId).orElseThrow();
         return commentService.commentRegister(userId, gallery, reqDto);
+    }
+
+    /**
+     * 내가 작성한 겔러리 수 구하기
+     * @param member
+     * @return
+     */
+    public Long getMyGalleryCount(Member member) {
+        return galleryRepository.countByMemberId(member.getId());
+    }
+
+    public GalleryListRes myGalleryList(String userId) {
+        Member member = memberRepository.findByEmail(userId).orElseThrow();
+        GalleryListRes res = new GalleryListRes();
+        List<Gallery> galleryList = galleryRepository.findByMemberId(member.getId());
+        List<GalleryRes> galleryResList = galleryList.stream().map(gallery -> {
+            String regTime = DateUtils.getDateTimeString(gallery.getRegTime());
+            return GalleryRes.builder()
+                    .bookId(gallery.getId())
+                    .title(gallery.getTitle())
+                    .cover(gallery.getCover())
+                    .writer(member.getName())
+                    .regTime(regTime)
+                    .build();
+        }).collect(Collectors.toList());
+        res.setBooks(galleryResList);
+        return res;
     }
 }

@@ -46,8 +46,8 @@ server:
   port: 8080
   max-http-request-header-size: 40000
 pkg:
-  imgLocation: /home/ubuntu/project/fileUpload #D:/Programming/bookmoment/fileUpload
-  uploadPath: file:/home/ubuntu/project/fileUpload/
+  imgLocation: D:/Programming/bookmoment/fileUpload
+  uploadPath: file:///D:/Programming/bookmoment/fileUpload/
 logging:
   level:
     org:

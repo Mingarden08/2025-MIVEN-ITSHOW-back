@@ -3,11 +3,12 @@ package com.bookmoment.api.controller;
 import com.bookmoment.api.dto.req.CommentReqDto;
 import com.bookmoment.api.dto.req.GalleryRegReqDto;
 import com.bookmoment.api.dto.req.GalleryReqDto;
+import com.bookmoment.api.dto.req.LikeItReqDto;
 import com.bookmoment.api.dto.res.*;
 import com.bookmoment.api.repository.GalleryRepository;
 import com.bookmoment.api.service.CommentService;
 import com.bookmoment.api.service.GalleryService;
-
+import com.bookmoment.api.service.LikeItService;
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -31,16 +32,12 @@ import java.util.Map;
 @RequestMapping("/api/gallery")
 @Slf4j
 public class GalleryController {
-    //    private final GalleryRepository galleryRepository;
-//
-//    public GalleryController(GalleryRepository galleryRepository) {
-//        this.galleryRepository = galleryRepository;
-//    }
+
     @Autowired
     private GalleryService galleryService;
 
     @Autowired
-    private CommentService commentService;
+    private LikeItService likeItService;
 
     @PostMapping("/list")
     public ResponseEntity<DataResponse<GalleryListRes>> getGalleryList(@RequestBody GalleryReqDto dto,
@@ -125,9 +122,33 @@ public class GalleryController {
         return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
     }
 
-    @GetMapping("/{gNo}")
-    public GetLikeRes getMethodName(@PathVariable("gNo") Long galleryId, @RequestBody @Valid GetLikeReqDto dto) {
-        return this.galleryService.getLikeCount(galleryId, dto);
+
+    @PostMapping("/like")
+    public ResponseEntity<DataResponse<?>> LikeList(@Parameter(hidden = true) Authentication authentication,
+                                                    HttpServletRequest request,
+                                                    @RequestBody LikeItReqDto reqDto) {
+
+        if (authentication == null) {
+            throw new IllegalStateException("Authentication object is null");
+        }
+        String id = authentication.getName();
+
+        int likeCount = likeItService.getLikeCount(id, reqDto);
+        Map<String, Integer> res = new HashMap<>();
+        res.put("likeCount", likeCount);
+        return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
     }
-    
+
+    @PostMapping("/mylist")
+    public ResponseEntity<DataResponse<GalleryListRes>> getMyGalleryList(@Parameter(hidden = true) Authentication authentication,
+                                                                         HttpServletRequest request) {
+
+        if (authentication == null) {
+            throw new IllegalStateException("Authentication object is null");
+        }
+        String id = authentication.getName();
+        GalleryListRes res = galleryService.myGalleryList(id);
+        return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+    }
+
 }

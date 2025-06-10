@@ -1,6 +1,7 @@
 package com.bookmoment.api.repository;
 
 import com.bookmoment.api.entity.LikeIt;
+import com.bookmoment.api.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -22,9 +23,19 @@ public interface LikeItRepository extends JpaRepository<LikeIt, Long> {
      * @param galleryId
      * @return
      */
-    public long countByGalleryId(Long galleryId);
+    long countByGalleryId(Long galleryId);
 
-    Optional<LikeIt> findById(Long id);
+    long countByCommentId(Long commentId);
 
-    public long countByGalleryAndFlag(Long galleryId, String flag);
+
+    /**
+     * 누가 갤러리에 좋아요를 눌렀는지
+     * @param memberId
+     * @param galleryId
+     * @return
+     */
+    Optional<LikeIt> findByLikedBy_IdAndGallery_Id(Long memberId, Long galleryId);
+
+    Optional<LikeIt> findByLikedBy_IdAndComment_Id(Long memberId, Long commentId);
+
 }
