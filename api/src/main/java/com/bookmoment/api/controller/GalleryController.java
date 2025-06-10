@@ -140,7 +140,11 @@ public class GalleryController {
         try {
             result = galleryService.commentRegister(id, gNo, reqDto);
             res.put("success", result);
-            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+            if (result) {
+                return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+            } else {
+                return ResponseEntity.ok(DataResponse.of(ResponseCode.NOT_VALID, res));
+            }
         } catch (Exception e) {
             return ResponseEntity.ok(DataResponse.of(ResponseCode.FORBIDDEN, res));
         }
@@ -161,8 +165,12 @@ public class GalleryController {
         int likeCount = 0;
         try {
             likeCount = likeItService.getLikeCount(id, reqDto);
-            res.put("likeCount", likeCount);
-            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+            if (likeCount < -1) {
+                return ResponseEntity.ok(DataResponse.of(ResponseCode.NOT_VALID, res));
+            } else {
+                res.put("likeCount", likeCount);
+                return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+            }
         } catch (Exception e) {
             return ResponseEntity.ok(DataResponse.of(ResponseCode.NOT_FOUND_GALLERY, res));
         }

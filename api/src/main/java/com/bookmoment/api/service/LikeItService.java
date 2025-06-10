@@ -59,12 +59,12 @@ public class LikeItService {
         Member member = memberRepository.findByEmail(email)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
-
         if ("R".equals(flag) || "r".equals(flag)) {
             Optional<LikeIt> existingLike = likeItRepository.findByLikedBy_IdAndGallery_Id(member.getId(), Id);
-
             if (existingLike.isPresent()) {
                 likeItRepository.delete(existingLike.get());
+            } else if (existingLike.isEmpty()) {
+                return -10;
             } else {
                 Gallery gallery = galleryRepository.findByIdAndMemberId(member.getId(), Id);
                 LikeIt newLike = LikeIt.builder()

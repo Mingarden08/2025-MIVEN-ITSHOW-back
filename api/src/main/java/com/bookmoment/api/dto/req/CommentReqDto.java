@@ -5,6 +5,7 @@ import com.bookmoment.api.entity.Gallery;
 import com.bookmoment.api.entity.Member;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 

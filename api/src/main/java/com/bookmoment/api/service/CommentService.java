@@ -58,8 +58,12 @@ public class CommentService {
      */
     public boolean commentRegister(String userId, Gallery gallery, CommentReqDto reqDto) {
         Member member = memberRepository.findByEmail(userId).orElseThrow();
-        Comment comment = reqDto.toEntity(member, gallery);
-        commentRepository.save(comment);
-        return true;
+        if (reqDto.getText() == null || reqDto.getText().trim().isEmpty()) {
+            return false;
+        } else {
+            Comment comment = reqDto.toEntity(member, gallery);
+            commentRepository.save(comment);
+            return true;
+        }
     }
 }
