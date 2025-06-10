@@ -75,10 +75,18 @@ public class ProfileController {
         }
 
         String id = authentication.getName();
+
         boolean result = profileService.patchProfile(id, reqDto);
+        
         Map<String, Boolean> res = new HashMap<>();
-        res.put("success", result);
-        return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+        if (result) { // 프로필 수정 성공   
+            res.put("success", result);
+            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
+        } else { // 프로필 수정 실패
+            res.put("success", false);
+            return ResponseEntity.badRequest().body(DataResponse.of(ResponseCode.NOT_ENTERED_REQUEST_BODY_FIELD, "Failed to update data"));
+        }
+
     }
 
     @GetMapping("")
