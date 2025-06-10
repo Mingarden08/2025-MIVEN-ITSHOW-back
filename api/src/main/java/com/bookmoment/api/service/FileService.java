@@ -82,7 +82,9 @@ public class FileService {
         String randomStr = UUID.randomUUID().toString().replace("-", "");
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
         String formatTime = LocalDateTime.now().format(dateTimeFormatter);
-
+        File file = new File("/home/ubuntu/project/fileUpload/2025/06/10/Miven_d5cc287db9964c5ebcdf89ae1fdee037_20250610_001934_.png");
+        log.info(">>>> test = {}", file.exists()); // true 나와야 정상
+        log.info(">>>> test = {}", file.canRead());
         log.info("** fileUpload fileName = {} **", "Miven" + "_" + randomStr + "_" + formatTime + "_" + fileExt);
         return "Miven" + "_" + randomStr + "_" + formatTime + "_" + fileExt; // Miven_(random)_20220101_094530_jpg
     }
