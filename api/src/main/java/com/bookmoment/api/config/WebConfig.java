@@ -32,4 +32,5 @@ public class WebConfig implements WebMvcConfigurer {
                 .mediaType("json", MediaType.APPLICATION_JSON)
                 .mediaType("form", MediaType.APPLICATION_FORM_URLENCODED);
     }
+
 }

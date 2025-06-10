@@ -83,7 +83,7 @@ public class FileService {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
         String formatTime = LocalDateTime.now().format(dateTimeFormatter);
 
-        log.info("** fileUpload fileName = {} **", "JO" + "_" + randomStr + "_" + formatTime + "_" + fileExt);
+        log.info("** fileUpload fileName = {} **", "Miven" + "_" + randomStr + "_" + formatTime + "_" + fileExt);
         return "Miven" + "_" + randomStr + "_" + formatTime + "_" + fileExt; // Miven_(random)_20220101_094530_jpg
     }
 }

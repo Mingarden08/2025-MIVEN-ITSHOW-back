@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -52,7 +53,6 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/api/members/signup",
                                 "/swagger-ui/**",
-                                "http://3.38.185.232:8080/images/**",
                                 "/images/**",
                                 "/swagger-ui.html",             // 혹시 사용하는 경우 대비
                                 "/v3/api-docs/**",
@@ -98,5 +98,9 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/thru/**", configuration);
         source.registerCorsConfiguration("/enoma/**", configuration);
         return source;
+    }
+
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return web -> web.ignoring().requestMatchers("/images/**");
     }
 }
