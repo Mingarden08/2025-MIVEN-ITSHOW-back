@@ -82,7 +82,7 @@ public class ProfileController {
     }
 
     @GetMapping("")
-    public ResponseEntity<DataResponse<?>> getProfile(@Parameter(hidden = true) Authentication authentication,
+    public ResponseEntity<DataResponse<ProfileRes>> getProfile(@Parameter(hidden = true) Authentication authentication,
                                                       HttpServletRequest request) {
         // 회원체크
         if (authentication == null) {
