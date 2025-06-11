@@ -4,6 +4,7 @@ import com.bookmoment.api.filter.JwtFilter;
 import com.bookmoment.api.util.JwtUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -47,6 +48,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         JwtFilter jwtFilter = new JwtFilter(jwtUtil, userDetailsService);
         http
+                .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable) // ✅ 변경된 방식
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
@@ -87,7 +89,7 @@ public class SecurityConfig {
         configuration.setAllowedMethods(Collections.singletonList("*")); // 모든 HTTP 메서드 허용
         configuration.setAllowedHeaders(Collections.singletonList("*")); // 모든 헤더 허용
 
-        configuration.setAllowCredentials(false);
+        configuration.setAllowCredentials(true);
         configuration.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -97,6 +99,7 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/gateway/**", configuration);
         source.registerCorsConfiguration("/thru/**", configuration);
         source.registerCorsConfiguration("/enoma/**", configuration);
+        source.registerCorsConfiguration("/**", configuration); // 모든 경로에 대해 CORS 설정 적용
         return source;
     }
 
