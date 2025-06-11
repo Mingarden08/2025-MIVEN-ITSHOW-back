@@ -80,7 +80,7 @@ public class SecurityConfig {
         configuration.setAllowedOriginPatterns(Arrays.asList("*",
                 "http://3.38.185.232:8080",
                 "http://3.38.185.232:8081",
-                "http://localhost:80"));
+                "http://localhost:3000"));
         //configuration.addAllowedHeader("*");
         //configuration.setAllowedMethods(Arrays.asList("*"));
         configuration.setAllowedOriginPatterns(Collections.singletonList("*")); // 모든 도메인 허용
