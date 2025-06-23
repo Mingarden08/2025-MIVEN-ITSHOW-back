@@ -16,16 +16,21 @@ import lombok.ToString;
 @Builder
 public class MemberSignupRequestDto {
     @NotBlank(message = "이름은 필수 입력 값입니다.")
-    @Size(min = 2, max = 25, message = "이름은 2자 이상, 25자 이하로 입력해주세요.")
     private String name;
 
     @NotBlank(message = "이메일은 필수 입력 값입니다.")
-    @Email(message = "올바른 이메일 형식이 아닙니다.")
+    @Pattern(
+            regexp = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$",
+            message = "이메일 형식이 올바르지 않습니다."
+    )
     @Size(max = 50, message = "이메일은 50자 이하로 입력해주세요.")
     private String email;
 
     @NotBlank(message = "비밀번호는 필수 입력 값입니다.")
-    @Size(min = 8, max = 50, message = "비밀번호는 최소 8자 이상, 최대 50자 이하로 입력해주세요.")
+    @Pattern(
+            regexp = "^[a-zA-Z0-9!@#$%^&*?_]{8,50}$",
+            message = "비밀번호는 영문자, 숫자, 특수문자(!@#$%^&*?_)만 포함하여 8~50자 사이여야 합니다."
+    )
     private String passwd;
 
 

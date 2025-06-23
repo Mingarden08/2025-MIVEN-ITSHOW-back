@@ -7,6 +7,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,6 +18,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class AuthService {
     private final MemberRepository memberRepository;
@@ -44,6 +46,8 @@ public class AuthService {
         }
 
         Member member = memberOptional.get();
+        log.info("member: {}", member.getName());
+
         //비밀번호 검증
         if (!passwordEncoder.matches(req.getPasswd(), member.getPasswd())) {
             throw new RuntimeException("Invalid Password");
@@ -53,7 +57,7 @@ public class AuthService {
         return Jwts.builder()
                 .setSubject(member.getEmail())
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 10000 * 60 * 60 * 24))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24)) // 24시간 유효
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }

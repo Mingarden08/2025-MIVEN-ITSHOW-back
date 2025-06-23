@@ -16,7 +16,7 @@ public class JwtUtil {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date()) // 발급 시간
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 1440)) // 24시간 후 만료
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24)) // 24시간 후 만료
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();
     }

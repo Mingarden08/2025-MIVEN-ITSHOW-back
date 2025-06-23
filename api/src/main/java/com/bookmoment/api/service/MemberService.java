@@ -69,6 +69,7 @@ public class MemberService {
         dto.setPasswd(encodedPassword);
 
         Member member = dto.toEntity();
+        log.info("member: {}", member.getName());
         memberRepository.save(member);
         return true;
     }

@@ -44,4 +44,11 @@ public interface GalleryRepository extends JpaRepository<Gallery, Long> {
      */
     Gallery findByIdAndMemberId(Long id, Long memberId);
 
+    /**
+     * 내가 작성한
+     * @param isbn
+     * @param memberId
+     * @return
+     */
+    Long findIdByIsbn(String isbn);
 }

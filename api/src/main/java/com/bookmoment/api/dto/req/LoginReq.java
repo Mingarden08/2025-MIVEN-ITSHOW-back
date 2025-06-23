@@ -13,6 +13,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class LoginReq {
+
     @NotBlank(message = "이메일은 필수 입력 값입니다.")
     @Email(message = "올바른 이메일 형식이 아닙니다.")
     @Size(max = 50, message = "이메일은 50자 이하로 입력해주세요.")

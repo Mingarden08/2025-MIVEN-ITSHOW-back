@@ -38,6 +38,7 @@ public class CommentService {
         List<Comment> comments = commentRepository.findByGalleryIdOrderByIdDesc(galleryId);
         List<CommentRes> res = comments.stream().map(comment -> {
             Member member = memberRepository.getOne(comment.getWriter().getId());
+            log.info("member: {}", member.getName());
             return CommentRes.builder()
                     .id(comment.getId())
                     .text(comment.getText())
@@ -58,6 +59,7 @@ public class CommentService {
      */
     public boolean commentRegister(String userId, Gallery gallery, CommentReqDto reqDto) {
         Member member = memberRepository.findByEmail(userId).orElseThrow();
+        log.info("member: {}", member.getName());
         if (reqDto.getText() == null || reqDto.getText().trim().isEmpty()) {
             return false;
         } else {

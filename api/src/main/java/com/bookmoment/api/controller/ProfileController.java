@@ -40,7 +40,7 @@ public class ProfileController {
     private final FileService fileService;
 
     @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE, consumes = {"multipart/form-data"})
-    public ResponseEntity<DataResponse<?>> patchProfile(@Parameter(hidden = true) Authentication authentication,
+    public ResponseEntity<DataResponse<Map<String, Boolean>>> patchProfile(@Parameter(hidden = true) Authentication authentication,
                                                         HttpServletRequest request,
                                                         @Parameter(description = "file") @RequestParam("file") MultipartFile file) throws MalformedURLException, BadRequestException {
         if (authentication == null) {
@@ -67,7 +67,7 @@ public class ProfileController {
     }
 
     @PatchMapping("")
-    public ResponseEntity<DataResponse<?>> patchProfile(@Parameter(hidden = true) Authentication authentication,
+    public ResponseEntity<DataResponse<Map<String, Boolean>>> patchProfile(@Parameter(hidden = true) Authentication authentication,
                                                         HttpServletRequest request,
                                                         @RequestBody PatchProfileReqDto reqDto){
         if (authentication == null) {
@@ -84,7 +84,7 @@ public class ProfileController {
             return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
         } else { // 프로필 수정 실패
             res.put("success", false);
-            return ResponseEntity.badRequest().body(DataResponse.of(ResponseCode.NOT_ENTERED_REQUEST_BODY_FIELD, "Failed to update data"));
+            return ResponseEntity.badRequest().body(DataResponse.of(ResponseCode.NOT_ENTERED_REQUEST_BODY_FIELD, res));
         }
 
     }
@@ -100,8 +100,9 @@ public class ProfileController {
 
         try {
             // 서비스 호출
-            ProfileRes res = profileService.getProfile(id); 
-            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res)); 
+            ProfileRes res = profileService.getProfile(id);
+            log.info("profile: {}", res.toString());
+            return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
         } catch (Exception e) {
             e.printStackTrace();
         }

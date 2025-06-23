@@ -42,8 +42,9 @@ public class ProfileService {
      */
     public boolean patchProfile(String userId, @Valid PatchProfileReqDto reqDto) {
         Member member = memberService.getMemberByEmail(userId);
-
+        log.info("member: {}", member.getName());
         Optional<Profile> profileOptional = profileRepository.findByMemberId(member.getId());
+        log.info("{}", profileOptional.isPresent());
         if (profileOptional.isPresent()) { //등록된 프로필이 존재하는 경우 update
             Profile profile = profileOptional.get();
 
@@ -75,23 +76,30 @@ public class ProfileService {
             profile.getMember().updateEntity(reqDto.getName()); //member에 담긴 이름 업데이트
 
         } else { //없을 경우 신규 생성(추가)
+
+            //profile안에는 이미 music과 quote가 만들어져 있음.
+            //                .music(this.music.toEntity())
+            //                .quote(this.quote.toEntity())
+            // JPA연속성에 의거, profile이 저장될 때 저장된 profile 을 참조해야하는
+            // music과 queote에는 자동으로 profile_id가 참조되어진 것으로 이해할 필요 있음.
             Profile profile = reqDto.toEntity(member);
+
             int quoteCount = Math.toIntExact(galleryService.getMyGalleryCount(member));
             profile.setQuoteCount(quoteCount);
-            Profile newProfile = profileRepository.save(profile);
 
             //저장된 newProfile에서 각각 Music, Quote에 저장된 Profile을 설정해준다.
             //양방향 매핑관계에서는 주인과 비주인 둘 다 설정을 추가해주기 위함.
 
-            Music music = newProfile.getMusic();
-            music.setProfileInfo(newProfile);
+            // 따라서, new Music할게 아니라 profile.getMusic()을 해서
+            // music 을 가져오고 music이 참조하는 profile은 위에서 만든 profile을 연결하는거지.
+            // 현재까지 실제 db에는 어떠한 insert도 일어나지 않은 상태.
+            Music music = profile.getMusic(); //newProfile.getMusic();
+            music.setProfileInfo(profile);
 
-            Quote quote = newProfile.getQuote();
-            quote.setProfileInfo(newProfile);
+            Quote quote = profile.getQuote();
+            quote.setProfileInfo(profile);
 
-            if (reqDto.getName() != null) {
-                member.updateEntity(reqDto.getName());
-            }
+            profileRepository.save(profile);
         }
         return true;
     }
@@ -103,6 +111,7 @@ public class ProfileService {
      */
     public ProfileRes getProfile(String userId) {
         Member member = memberService.getMemberByEmail(userId);
+        log.info("member: {}", member.getName());
         Long id = member.getId();
         Optional<Profile> profileOptional = profileRepository.findByMemberId(id);
         ProfileRes profileRes = new ProfileRes();
@@ -135,6 +144,7 @@ public class ProfileService {
     public boolean updateImage(String userId, String profileImage) {
         boolean result = true;
         Member member = memberService.getMemberByEmail(userId);
+        log.info("member: {}", member.getName());
         Long id = member.getId();
         Optional<Profile> profileOptional = profileRepository.findByMemberId(id);
 

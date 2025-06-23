@@ -54,6 +54,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/api/members/signup",
+                                "/api/naver/book",
                                 "/swagger-ui/**",
                                 "/images/**",
                                 "/swagger-ui.html",             // 혹시 사용하는 경우 대비

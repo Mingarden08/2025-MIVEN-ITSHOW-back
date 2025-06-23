@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.bookmoment.api.dto.req.GetLikeReqDto;
 
 
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,8 +40,8 @@ public class GalleryController {
     @Autowired
     private LikeItService likeItService;
 
-    @PostMapping("/list")
-    public ResponseEntity<DataResponse<GalleryListRes>> getGalleryList(@RequestBody GalleryReqDto dto,
+    @GetMapping("/list")
+    public ResponseEntity<DataResponse<GalleryListRes>> getGalleryList(@ModelAttribute GalleryReqDto dto,
                                                                        @Parameter(hidden = true) Authentication authentication,
                                                                        HttpServletRequest request) {
 //      1.로그인 여부 체크
@@ -99,6 +100,7 @@ public class GalleryController {
             res.put("success", result);
             return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, res));
         } catch (Exception e) {
+            log.info(e.getMessage());
             return ResponseEntity.ok(DataResponse.of(ResponseCode.NOT_FOUND_USER, res));
         }
     }
@@ -134,6 +136,7 @@ public class GalleryController {
             throw new IllegalStateException("Authentication object is null");
         }
         String id = authentication.getName();
+        log.info("comment: {}", authentication.getName());
 
         boolean result = false;
         Map<String, Boolean> res = new HashMap<>();
@@ -176,7 +179,7 @@ public class GalleryController {
         }
     }
 
-    @PostMapping("/mylist")
+    @GetMapping("/mylist")
     public ResponseEntity<DataResponse<GalleryListRes>> getMyGalleryList(@Parameter(hidden = true) Authentication authentication,
                                                                          HttpServletRequest request) {
 

@@ -87,6 +87,7 @@ public class GalleryService {
     public boolean galleryRegister(String userId, GalleryRegReqDto reqDto) {
         // 회원정보 구하기
         Member member = memberRepository.findByEmail(userId).orElseThrow();
+        log.info("member: {}", member.getName());
         Gallery gallery = reqDto.toEntity(member);
         galleryRepository.save(gallery);
         return true;
@@ -100,6 +101,7 @@ public class GalleryService {
      */
     public GalleryListRes galleryList(String userId, String keyword) {
         Member member = memberRepository.findByEmail(userId).orElseThrow();
+        log.info("member: {}", member.getName());
         GalleryListRes res = new GalleryListRes();
 
         List<Gallery> galleryList = (keyword == null) ? galleryRepository.findAllByOrderByIdDesc() : galleryRepository.findByTitleContainingOrderByIdDesc(keyword);
@@ -125,12 +127,15 @@ public class GalleryService {
      */
     public GalleryDetailRes galleryDetail(String userId, Long galleryId) {
         Member member = memberRepository.findByEmail(userId).orElseThrow();
+        log.info("member: {}", member.getName());
         GalleryDetailRes res = new GalleryDetailRes();
         Optional<Gallery> galleryOptional = galleryRepository.findById(galleryId);
         if (galleryOptional.isPresent()) {
             Gallery gallery = galleryOptional.get();
             String publicDate = DateUtils.getLocalDateTimeString(gallery.getPublicDate(), DateUtils.FORMAT_DATE_UNIT_BAR);
             String regTime = DateUtils.getDateTimeString(gallery.getRegTime());
+            String temp = gallery.getQuote();
+            temp = temp.replaceAll("\n", "<br>");
             res = GalleryDetailRes.builder()
                     .id(gallery.getId())
                     .title(gallery.getTitle())
@@ -142,7 +147,7 @@ public class GalleryService {
                     .writer(gallery.getMember().getName())
                     .rating(gallery.getRating())
                     .reviewText(gallery.getReviewText())
-                    .quote(gallery.getQuote())
+                    .quote(temp)
                     .likeCount(likeItService.getLikeItListOfGallery(gallery.getId()))
                     .regTime(regTime)
                     .comments(commentService.getComments(gallery.getId()))
@@ -163,6 +168,7 @@ public class GalleryService {
     public boolean galleryUpdate(String userId, Long galleryId, GalleryRegReqDto reqDto) {
         Optional<Gallery> galleryOptional = galleryRepository.findById(galleryId);
         Member member = memberRepository.findByEmail(userId).orElseThrow();
+        log.info("member: {}", member.getName());
         if (galleryOptional.isPresent()) {
             Gallery gallery = galleryOptional.get();
 
@@ -206,8 +212,14 @@ public class GalleryService {
         return galleryRepository.countByMemberId(member.getId());
     }
 
+    /**
+     * 내 갤러리 조회하기
+     * @param userId
+     * @return
+     */
     public GalleryListRes myGalleryList(String userId) {
         Member member = memberRepository.findByEmail(userId).orElseThrow();
+        log.info("member: {}", member.getName());
         GalleryListRes res = new GalleryListRes();
         List<Gallery> galleryList = galleryRepository.findByMemberId(member.getId());
         List<GalleryRes> galleryResList = galleryList.stream().map(gallery -> {
@@ -223,4 +235,5 @@ public class GalleryService {
         res.setBooks(galleryResList);
         return res;
     }
+
 }
